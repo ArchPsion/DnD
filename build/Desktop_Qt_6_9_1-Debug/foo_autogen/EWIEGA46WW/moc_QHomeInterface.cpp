@@ -40,15 +40,15 @@ template <> constexpr inline auto QHomeInterface::qt_create_metaobjectdata<qt_me
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "QHomeInterface",
-        "openPowerDatabase",
+        "showPowerDatabase",
         "",
-        "openSpellDatabase"
+        "showSpellDatabase"
     };
 
     QtMocHelpers::UintData qt_methods {
-        // Slot 'openPowerDatabase'
+        // Slot 'showPowerDatabase'
         QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'openSpellDatabase'
+        // Slot 'showSpellDatabase'
         QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
@@ -73,8 +73,8 @@ void QHomeInterface::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
     auto *_t = static_cast<QHomeInterface *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->openPowerDatabase(); break;
-        case 1: _t->openSpellDatabase(); break;
+        case 0: _t->showPowerDatabase(); break;
+        case 1: _t->showSpellDatabase(); break;
         default: ;
         }
     }

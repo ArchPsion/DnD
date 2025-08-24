@@ -1,7 +1,7 @@
 #ifndef __CONSTANTS_HPP__
 #define __CONSTANTS_HPP__
 
-enum class SpellConstantsEnum : quint32
+enum class SpellEnum : quint32
 {
 	ABJURATION,
 	CONJURATION,
@@ -361,7 +361,7 @@ enum class SpellConstantsEnum : quint32
 	SIZE
 };
 
-enum class PowerConstantsEnum : quint32
+enum class PowerEnum : quint32
 {
 	CLAIRSENTIENCE,
 	METACREATIVITY,

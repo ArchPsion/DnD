@@ -42,6 +42,7 @@ template <> constexpr inline auto QDatabaseInterfaceIntermediary::qt_create_meta
         "QDatabaseInterfaceIntermediary",
         "resetEverything",
         "",
+        "search",
         "showDescription",
         "showDescriptionFromList",
         "switchButtonState"
@@ -50,16 +51,18 @@ template <> constexpr inline auto QDatabaseInterfaceIntermediary::qt_create_meta
     QtMocHelpers::UintData qt_methods {
         // Slot 'resetEverything'
         QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessProtected, QMetaType::Void),
+        // Slot 'search'
+        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessProtected, QMetaType::Void),
         // Slot 'showDescription'
-        QtMocHelpers::SlotData<void(const QUrl &) const>(3, 2, QMC::AccessProtected, QMetaType::Void, {{
+        QtMocHelpers::SlotData<void(const QUrl &) const>(4, 2, QMC::AccessProtected, QMetaType::Void, {{
             { QMetaType::QUrl, 2 },
         }}),
         // Slot 'showDescriptionFromList'
-        QtMocHelpers::SlotData<void(int) const>(4, 2, QMC::AccessProtected, QMetaType::Void, {{
+        QtMocHelpers::SlotData<void(int) const>(5, 2, QMC::AccessProtected, QMetaType::Void, {{
             { QMetaType::Int, 2 },
         }}),
         // Slot 'switchButtonState'
-        QtMocHelpers::SlotData<void() const>(5, 2, QMC::AccessProtected, QMetaType::Void),
+        QtMocHelpers::SlotData<void() const>(6, 2, QMC::AccessProtected, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -84,9 +87,10 @@ void QDatabaseInterfaceIntermediary::qt_static_metacall(QObject *_o, QMetaObject
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->resetEverything(); break;
-        case 1: _t->showDescription((*reinterpret_cast< std::add_pointer_t<QUrl>>(_a[1]))); break;
-        case 2: _t->showDescriptionFromList((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 3: _t->switchButtonState(); break;
+        case 1: _t->search(); break;
+        case 2: _t->showDescription((*reinterpret_cast< std::add_pointer_t<QUrl>>(_a[1]))); break;
+        case 3: _t->showDescriptionFromList((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 4: _t->switchButtonState(); break;
         default: ;
         }
     }
@@ -111,14 +115,14 @@ int QDatabaseInterfaceIntermediary::qt_metacall(QMetaObject::Call _c, int _id, v
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 5)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
 }

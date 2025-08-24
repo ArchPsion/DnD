@@ -3,7 +3,7 @@
 
 // Qt Libraries
 #include <QGroupBox>
-#include <QKeyEvent>
+#include <QShortcut>
 
 // Custom Libraries
 #include "HexBitset.hpp"
@@ -70,22 +70,23 @@ class QDatabaseInterface : public QDatabaseInterfaceIntermediary
 		inline void					initialiseWidgets(void);
 		inline void					initialiseWindow(const std::initializer_list<ButtonBitPair>&, const QString&, const QFont&, QPushButton*, CustomBitset&, qint32);
 		inline void					resetButtons(void) override;
-		inline void					search(void);
 		inline void					searchBitsets(void);
 		inline void					searchPattern(const std::string&, std::ifstream&, bool);
 		inline void					searchStrings(void);
 		inline void					updateLore(const QString&, QTextEdit*, quint32) const override;
 		inline void					updateLoreFromList(QTextEdit*, qint32) const override;
+		
+	protected slots:
+	
+		inline void					search(void) override;
 	
 	protected:
 	
 		inline void					closeEvent(QCloseEvent*);
-		inline void					keyReleaseEvent(QKeyEvent*);
 	
 	public:
 	
 		inline						QDatabaseInterface(QWidget*, const QString&);
-		inline bool					eventFilter(QObject*, QEvent*) override;
 };
 
 template<typename Type>
@@ -94,6 +95,11 @@ QDatabaseInterface<Type>::QDatabaseInterface(QWidget* foo, const QString& name) 
 {
 	QDatabaseInterface::initialiseData();
 	QDatabaseInterface::initialiseWidgets();
+	
+	const auto s1 = new QShortcut(QDatabaseInterfaceIntermediary::mainWidget);
+	s1->setKeys({ QKeySequence(Qt::Key_Return), QKeySequence(Qt::Key_Enter) });
+	
+	QObject::connect(s1, SIGNAL(activated(void)), this, SLOT(search(void)));
 }
 
 template<typename Type>
@@ -110,15 +116,6 @@ void QDatabaseInterface<Type>::closeEvent(QCloseEvent* e)
 {
 	QWidget::parentWidget()->show();
 	QMainWindow::closeEvent(e);
-}
-
-template<typename Type>
-bool QDatabaseInterface<Type>::eventFilter(QObject* obj, QEvent* event)
-{
-	if (event->type() == QEvent::KeyRelease)
-		QDatabaseInterface::event(event);
-	
-	return QObject::eventFilter(obj, event);
 }
 
 template<typename Type>
@@ -592,11 +589,10 @@ void QDatabaseInterface<Type>::initialiseWidgets(void)
 	QMainWindow::setWindowTitle("Dungeons & Dragons 3.5e " + QDatabaseInterface::ResistanceString + " Library");
 	QMainWindow::resize(1700, 600);
 	
-	const auto layout = new QGridLayout(new QWidget());
-	QMainWindow::setCentralWidget(layout->parentWidget());
-	
 	QFont font;
 	font.setPointSize(8);
+	
+	const auto layout = new QGridLayout();
 	
 	QDatabaseInterface::initialiseClasses(font, layout);
 	QDatabaseInterface::initialiseSpecial(font, layout);
@@ -606,6 +602,7 @@ void QDatabaseInterface<Type>::initialiseWidgets(void)
 	QDatabaseInterface::initialiseMaterialsOrDisplays(font, layout);
 	
 	const auto delta = QDatabaseInterface::initialiseDescriptors(font, layout);
+	
 	QDatabaseInterface::initialiseSources(font, layout, delta);
 	QDatabaseInterface::initialiseLevels(font, layout, delta);
 	QDatabaseInterface::initialiseRanges(font, layout, delta);
@@ -622,13 +619,17 @@ void QDatabaseInterface<Type>::initialiseWidgets(void)
 	layout->addWidget(QDatabaseInterfaceIntermediary::resultList, 0, 10, delta + 9, 7);
 	layout->addWidget(QDatabaseInterfaceIntermediary::lore, 0, 17, delta + 8, 10);
 	layout->addWidget(QDatabaseInterfaceIntermediary::label, delta + 8, 17, 1, 10);
+	
+	QDatabaseInterfaceIntermediary::mainWidget->setLayout(layout);
 }
 
 template<typename Type>
 void QDatabaseInterface<Type>::initialiseWindow(const std::initializer_list<ButtonBitPair>& bitPairs, const QString& name, const QFont& font, QPushButton* button, CustomBitset& bset, qint32 columns)
 {
-	const auto layout = new QGridLayout(new QWidget());
 	const auto window = new QMainWindow(button);
+	const auto someWidget = new QWidget();
+	const auto layout = new QGridLayout();
+	
 	auto count = 0;
 	
 	for (const auto& pr : bitPairs)
@@ -643,28 +644,12 @@ void QDatabaseInterface<Type>::initialiseWindow(const std::initializer_list<Butt
 		bset.set(pr.second);
 	}
 	
-	window->installEventFilter(this);
-	window->setCentralWidget(layout->parentWidget());
+	someWidget->setLayout(layout);
+	window->setCentralWidget(someWidget);
+	window->installEventFilter(QDatabaseInterfaceIntermediary::mainWidget);
 	
 	window->setWindowTitle(name);
 	window->hide();
-}
-
-template<typename Type>
-void QDatabaseInterface<Type>::keyReleaseEvent(QKeyEvent* e)
-{
-	switch (e->key())
-	{
-		case Qt::Key_Return:
-		case Qt::Key_Enter:
-			QDatabaseInterface::search();
-			break;
-
-		default:
-			break;
-	}
-	
-	QMainWindow::keyReleaseEvent(e);
 }
 
 template<typename Type>

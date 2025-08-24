@@ -4,11 +4,6 @@
   /home/lol/Documents/Coding/C++/DnD/HexBitset.hpp \
   /home/lol/Documents/Coding/C++/DnD/QDatabaseInterface.hpp \
   /home/lol/Documents/Coding/C++/DnD/QDatabaseInterfaceIntermediary.hpp \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtCore/QList \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtCore/QObject \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtCore/QRect \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtCore/QSize \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtCore/QSizeF \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/q17memory.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/q20functional.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/q20iterator.h \
@@ -16,7 +11,6 @@
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/q20type_traits.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/q20utility.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/q23utility.h \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qabstracteventdispatcher.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qabstractitemmodel.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qalgorithms.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qanystringview.h \
@@ -27,7 +21,6 @@
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qatomic.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qatomic_cxx11.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qbasicatomic.h \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qbasictimer.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qbindingstorage.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qbytearray.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qbytearrayalgorithms.h \
@@ -44,16 +37,10 @@
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qcontainerinfo.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qcontainertools_impl.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qcontiguouscache.h \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qcoreapplication.h \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qcoreapplication_platform.h \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qcoreevent.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qdarwinhelpers.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qdatastream.h \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qdeadlinetimer.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qdebug.h \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qelapsedtimer.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qendian.h \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qeventloop.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qexceptionhandling.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qflags.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qfloat16.h \
@@ -83,7 +70,6 @@
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qmetatype.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qminmax.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qnamespace.h \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qnativeinterface.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qnumeric.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qobject.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qobject_impl.h \
@@ -149,25 +135,18 @@
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qversiontagging.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qxptype_traits.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/qyieldcpu.h \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtGui/QKeyEvent \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtGui/QTransform \
+  /home/lol/Qt/6.9.1/gcc_64/include/QtGui/QShortcut \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qaction.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qbitmap.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qbrush.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qcolor.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qcursor.h \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qevent.h \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qeventpoint.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qfont.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qfontinfo.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qfontmetrics.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qfontvariableaxis.h \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qguiapplication.h \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qguiapplication_platform.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qicon.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qimage.h \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qinputdevice.h \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qinputmethod.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qkeysequence.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qpaintdevice.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qpalette.h \
@@ -175,13 +154,11 @@
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qpicture.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qpixelformat.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qpixmap.h \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qpointingdevice.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qpolygon.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qregion.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qrgb.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qrgba64.h \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qscreen.h \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qscreen_platform.h \
+  /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qshortcut.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qtextcursor.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qtextdocument.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qtextformat.h \
@@ -191,8 +168,6 @@
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qtguiglobal.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qtransform.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qvalidator.h \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qvector2d.h \
-  /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qvectornd.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtGui/qwindowdefs.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtWidgets/QGridLayout \
   /home/lol/Qt/6.9.1/gcc_64/include/QtWidgets/QGroupBox \

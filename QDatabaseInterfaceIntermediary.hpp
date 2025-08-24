@@ -35,19 +35,21 @@ class QDatabaseInterfaceIntermediary : public QMainWindow
 		inline static QString							Process(const std::string&, const QString&);
 		inline static QString							Table(const std::string&);
 		
-		QMainWindow* const							informationWindow;
-		QTextBrowser* const							informationContent;
+		QWidget* const								mainWidget = new QWidget();
 		
-		QPushButton* const							barNamesButton;
-		QPushButton* const							barTextsButton;
-		QPushButton* const							keepListButton;
-		QPushButton* const							resetButton;
+		QMainWindow* const							informationWindow = new QMainWindow(mainWidget);
+		QTextBrowser* const							informationContent = new QTextBrowser(informationWindow);
 		
-		QLineEdit* const							nameLineEdit;
-		QLineEdit* const							loreLineEdit;
-		QListWidget* const							resultList;
-		QTextBrowser* const							lore;
-		QLabel* const								label;
+		QPushButton* const							barNamesButton = new QPushButton("Bar Names", mainWidget);
+		QPushButton* const							barTextsButton = new QPushButton("Bar Texts", mainWidget);
+		QPushButton* const							keepListButton = new QPushButton("Keep List", mainWidget);
+		QPushButton* const							resetButton = new QPushButton("Reset Buttons", mainWidget);
+		
+		QLineEdit* const							nameLineEdit = new QLineEdit(mainWidget);
+		QLineEdit* const							loreLineEdit = new QLineEdit(mainWidget);
+		QListWidget* const							resultList = new QListWidget(mainWidget);
+		QTextBrowser* const							lore = new QTextBrowser(mainWidget);
+		QLabel* const								label = new QLabel(mainWidget);
 		
 		const QString								contentName;
 		std::map<QString, quint32>						fullIndex;
@@ -59,6 +61,7 @@ class QDatabaseInterfaceIntermediary : public QMainWindow
 	protected slots:
 	
 		inline void 								resetEverything(void);
+		virtual void								search(void) = 0;
 		inline void 								showDescription(const QUrl&) const;
 		inline void 								showDescriptionFromList(int) const;
 		inline void 								switchButtonState(void) const;
@@ -70,37 +73,27 @@ class QDatabaseInterfaceIntermediary : public QMainWindow
 
 QDatabaseInterfaceIntermediary::QDatabaseInterfaceIntermediary(QWidget* foo, const QString& name) : 
 	QMainWindow(foo),
-	informationWindow(new QMainWindow(this)),
-	informationContent(new QTextBrowser(informationWindow)),
-	barNamesButton(new QPushButton("Bar Names", this)),
-	barTextsButton(new QPushButton("Bar Texts", this)),
-	keepListButton(new QPushButton("Keep List", this)),
-	resetButton(new QPushButton("Reset Buttons", this)),
-	nameLineEdit(new QLineEdit(this)),
-	loreLineEdit(new QLineEdit(this)),
-	resultList(new QListWidget(this)),
-	lore(new QTextBrowser(this)),
-	label(new QLabel(this)),
 	contentName(name)
 {
+	QMainWindow::setCentralWidget(QDatabaseInterfaceIntermediary::mainWidget);
 	QDatabaseInterfaceIntermediary::Databases[name] = this;
+	
 	QObject::connect(QDatabaseInterfaceIntermediary::resetButton, SIGNAL(released(void)), this, SLOT(resetEverything(void)));
 	QObject::connect(QDatabaseInterfaceIntermediary::resultList, SIGNAL(currentRowChanged(int)), this, SLOT(showDescriptionFromList(int)));
 	QObject::connect(QDatabaseInterfaceIntermediary::lore, SIGNAL(anchorClicked(const QUrl&)), this, SLOT(showDescription(const QUrl&)));
 	
 	QDatabaseInterfaceIntermediary::nameLineEdit->setPlaceholderText("Search names...");
-	QDatabaseInterfaceIntermediary::nameLineEdit->installEventFilter(this);
-	
 	QDatabaseInterfaceIntermediary::loreLineEdit->setPlaceholderText("Search descriptions...");
-	QDatabaseInterfaceIntermediary::loreLineEdit->installEventFilter(this);
 	
 	QDatabaseInterfaceIntermediary::lore->setReadOnly(true);
 	QDatabaseInterfaceIntermediary::lore->setOpenLinks(false);
-	QDatabaseInterfaceIntermediary::lore->installEventFilter(this);
 	
-	const auto layout = new QVBoxLayout(new QWidget());
-	QDatabaseInterfaceIntermediary::informationWindow->setCentralWidget(layout->parentWidget());
+	const auto someWidget = new QWidget();
+	const auto layout = new QVBoxLayout();
+	
+	QDatabaseInterfaceIntermediary::informationWindow->setCentralWidget(someWidget);
 	layout->addWidget(QDatabaseInterfaceIntermediary::informationContent);
+	someWidget->setLayout(layout);
 	
 	QDatabaseInterfaceIntermediary::informationWindow->setWindowTitle("Information Window");
 	QDatabaseInterfaceIntermediary::informationWindow->resize(600, 800);

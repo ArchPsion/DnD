@@ -14,48 +14,47 @@ class QHomeInterface : public QMainWindow
 	Q_OBJECT
 	
 	private:
-		
-		QDatabaseInterface<PowerConstantsEnum>* const powerDatabaseWindow;
-		QDatabaseInterface<SpellConstantsEnum>* const spellDatabaseWindow;
+	
+		QWidget* const					mainWidget = new QWidget();
+		QDatabaseInterface<PowerEnum>* const		powerDatabaseWindow = new QDatabaseInterface<PowerEnum>(mainWidget, "power");
+		QDatabaseInterface<SpellEnum>* const		spellDatabaseWindow = new QDatabaseInterface<SpellEnum>(mainWidget, "spell");
 	
 	private slots:
 	
-		inline void openPowerDatabase(void);
-		inline void openSpellDatabase(void);
+		inline void					showPowerDatabase(void);
+		inline void					showSpellDatabase(void);
 	
 	public:
 	
 		inline QHomeInterface(void);
 };
 
-QHomeInterface::QHomeInterface(void) :
-	QMainWindow(),
-	powerDatabaseWindow(new QDatabaseInterface<PowerConstantsEnum>(this, "power")),
-	spellDatabaseWindow(new QDatabaseInterface<SpellConstantsEnum>(this, "spell"))
+QHomeInterface::QHomeInterface(void) : QMainWindow()
 {
 	QMainWindow::setWindowTitle("Dungeons & Dragons 3.5e Libraries");
+	QMainWindow::setCentralWidget(QHomeInterface::mainWidget);
 	QMainWindow::setMinimumWidth(500);
-	
-	const auto layout = new QVBoxLayout(new QWidget());
-	QMainWindow::setCentralWidget(layout->parentWidget());
 	
 	const auto powerDatabaseButton = new QPushButton("Power Library");
 	const auto spellDatabaseButton = new QPushButton("Spell Library");
 	
+	const auto layout = new QVBoxLayout();
+	
 	layout->addWidget(powerDatabaseButton);
 	layout->addWidget(spellDatabaseButton);
+	QHomeInterface::mainWidget->setLayout(layout);
 	
-	QObject::connect(powerDatabaseButton, SIGNAL(clicked(void)), this, SLOT(openPowerDatabase(void)));
-	QObject::connect(spellDatabaseButton, SIGNAL(clicked(void)), this, SLOT(openSpellDatabase(void)));
+	QObject::connect(powerDatabaseButton, SIGNAL(clicked(void)), this, SLOT(showPowerDatabase(void)));
+	QObject::connect(spellDatabaseButton, SIGNAL(clicked(void)), this, SLOT(showSpellDatabase(void)));
 }
 
-void QHomeInterface::openPowerDatabase(void)
+void QHomeInterface::showPowerDatabase(void)
 {
 	QHomeInterface::powerDatabaseWindow->show();
 	QMainWindow::hide();
 }
 
-void QHomeInterface::openSpellDatabase(void)
+void QHomeInterface::showSpellDatabase(void)
 {
 	QHomeInterface::spellDatabaseWindow->show();
 	QMainWindow::hide();

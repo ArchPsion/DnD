@@ -6,62 +6,62 @@
 #include "QDatabaseInterface.hpp"
 
 template<>
-QColor QDatabaseInterface<PowerConstantsEnum>::Foreground(const CustomBitset& b)
+QColor QDatabaseInterface<PowerEnum>::Foreground(const CustomBitset& b)
 {
-	if (b.test(PowerConstantsEnum::CLAIRSENTIENCE))
+	if (b.test(PowerEnum::CLAIRSENTIENCE))
 		return QDatabaseInterface::ClairsentienceDivinationColor;
-	else if (b.test(PowerConstantsEnum::METACREATIVITY))
+	else if (b.test(PowerEnum::METACREATIVITY))
 		return QDatabaseInterface::MetacreativityConjurationColor;
-	else if (b.test(PowerConstantsEnum::PSYCHOKINESIS))
+	else if (b.test(PowerEnum::PSYCHOKINESIS))
 		return QDatabaseInterface::PsychokinesisEvocationColor;
-	else if (b.test(PowerConstantsEnum::PSYCHOMETABOLISM))
+	else if (b.test(PowerEnum::PSYCHOMETABOLISM))
 		return QDatabaseInterface::PsychometabolismTransmutationColor;
-	else if (b.test(PowerConstantsEnum::PSYCHOPORTATION))
+	else if (b.test(PowerEnum::PSYCHOPORTATION))
 		return QDatabaseInterface::PsychoportationAbjurationColor;
-	else if (b.test(PowerConstantsEnum::TELEPATHY))
+	else if (b.test(PowerEnum::TELEPATHY))
 		return QDatabaseInterface::TelepathyEnchantmentColor;
 	
 	return QColor(0, 0, 0);
 }
 
 template<>
-QColor QDatabaseInterface<SpellConstantsEnum>::Foreground(const CustomBitset& b)
+QColor QDatabaseInterface<SpellEnum>::Foreground(const CustomBitset& b)
 {
-	if (b.test(SpellConstantsEnum::ABJURATION))
+	if (b.test(SpellEnum::ABJURATION))
 		return QDatabaseInterface::PsychoportationAbjurationColor;
-	else if (b.test(SpellConstantsEnum::CONJURATION))
+	else if (b.test(SpellEnum::CONJURATION))
 		return QDatabaseInterface::MetacreativityConjurationColor;
-	else if (b.test(SpellConstantsEnum::DIVINATION))
+	else if (b.test(SpellEnum::DIVINATION))
 		return QDatabaseInterface::ClairsentienceDivinationColor;
-	else if (b.test(SpellConstantsEnum::ENCHANTMENT))
+	else if (b.test(SpellEnum::ENCHANTMENT))
 		return QDatabaseInterface::TelepathyEnchantmentColor;
-	else if (b.test(SpellConstantsEnum::EVOCATION))
+	else if (b.test(SpellEnum::EVOCATION))
 		return QDatabaseInterface::PsychokinesisEvocationColor;
-	else if (b.test(SpellConstantsEnum::ILLUSION))
+	else if (b.test(SpellEnum::ILLUSION))
 		return QDatabaseInterface::IllusionColor;
-	else if (b.test(SpellConstantsEnum::NECROMANCY))
+	else if (b.test(SpellEnum::NECROMANCY))
 		return QDatabaseInterface::NecromancyColor;
-	else if (b.test(SpellConstantsEnum::TRANSMUTATION))
+	else if (b.test(SpellEnum::TRANSMUTATION))
 		return QDatabaseInterface::PsychometabolismTransmutationColor;
-	else if (b.test(SpellConstantsEnum::UNIVERSAL))
+	else if (b.test(SpellEnum::UNIVERSAL))
 		return QDatabaseInterface::UniversalColor;
 	
 	return QColor(0, 0, 0);
 }
 
 template<>
-void QDatabaseInterface<SpellConstantsEnum>::initialiseClasses(const QFont& font, QGridLayout* layout)
+void QDatabaseInterface<SpellEnum>::initialiseClasses(const QFont& font, QGridLayout* layout)
 {
 	const auto classBox = new QGroupBox("Core Classes", this);
 	const auto classLayout = new QHBoxLayout();
 	
-	const auto bitPairs = {	QDatabaseInterface::MakePair("Bard", SpellConstantsEnum::BARD),
-					QDatabaseInterface::MakePair("Cleric", SpellConstantsEnum::CLERIC),
-					QDatabaseInterface::MakePair("Druid", SpellConstantsEnum::DRUID),
-					QDatabaseInterface::MakePair("Paladin", SpellConstantsEnum::PALADIN),
-					QDatabaseInterface::MakePair("Ranger", SpellConstantsEnum::RANGER),
-					QDatabaseInterface::MakePair("Sorcerer", SpellConstantsEnum::SORCERER),
-					QDatabaseInterface::MakePair("Wizard", SpellConstantsEnum::WIZARD) };
+	const auto bitPairs = {	QDatabaseInterface::MakePair("Bard", SpellEnum::BARD),
+					QDatabaseInterface::MakePair("Cleric", SpellEnum::CLERIC),
+					QDatabaseInterface::MakePair("Druid", SpellEnum::DRUID),
+					QDatabaseInterface::MakePair("Paladin", SpellEnum::PALADIN),
+					QDatabaseInterface::MakePair("Ranger", SpellEnum::RANGER),
+					QDatabaseInterface::MakePair("Sorcerer", SpellEnum::SORCERER),
+					QDatabaseInterface::MakePair("Wizard", SpellEnum::WIZARD) };
 	
 	for (const auto& pr : bitPairs)
 	{
@@ -78,15 +78,15 @@ void QDatabaseInterface<SpellConstantsEnum>::initialiseClasses(const QFont& font
 }
 
 template<>
-void QDatabaseInterface<PowerConstantsEnum>::initialiseClasses(const QFont& font, QGridLayout* layout)
+void QDatabaseInterface<PowerEnum>::initialiseClasses(const QFont& font, QGridLayout* layout)
 {
 	const auto classBox = new QGroupBox("Classes", this);
 	const auto classLayout = new QHBoxLayout();
 	
-	const auto bitPairs = {	QDatabaseInterface::MakePair("Lurk", PowerConstantsEnum::LURK),
-					QDatabaseInterface::MakePair("Psion", PowerConstantsEnum::PSION),
-					QDatabaseInterface::MakePair("Psychic Rogue", PowerConstantsEnum::PSYCHIC_ROGUE),
-					QDatabaseInterface::MakePair("Psychic Warrior", PowerConstantsEnum::PSYCHIC_WARRIOR) };
+	const auto bitPairs = {	QDatabaseInterface::MakePair("Lurk", PowerEnum::LURK),
+					QDatabaseInterface::MakePair("Psion", PowerEnum::PSION),
+					QDatabaseInterface::MakePair("Psychic Rogue", PowerEnum::PSYCHIC_ROGUE),
+					QDatabaseInterface::MakePair("Psychic Warrior", PowerEnum::PSYCHIC_WARRIOR) };
 	
 	for (const auto& pr : bitPairs)
 	{
@@ -103,146 +103,146 @@ void QDatabaseInterface<PowerConstantsEnum>::initialiseClasses(const QFont& font
 }
 
 template<>
-void QDatabaseInterface<SpellConstantsEnum>::initialiseSpecial(const QFont& font, QGridLayout* layout)
+void QDatabaseInterface<SpellEnum>::initialiseSpecial(const QFont& font, QGridLayout* layout)
 {	
-	const auto bitPairs = {	QDatabaseInterface::MakePair("Adept", SpellConstantsEnum::ADEPT),
-				QDatabaseInterface::MakePair("Artificer", SpellConstantsEnum::ARTIFICER),
-				QDatabaseInterface::MakePair("Beguiler", SpellConstantsEnum::BEGUILER),
-				QDatabaseInterface::MakePair("Death Delver", SpellConstantsEnum::DEATH_DELVER),
-				QDatabaseInterface::MakePair("Dread Necromancer", SpellConstantsEnum::DREAD_NECROMANCER),
-				QDatabaseInterface::MakePair("Duskblade", SpellConstantsEnum::DUSKBLADE),
-				QDatabaseInterface::MakePair("Healer", SpellConstantsEnum::HEALER),
-				QDatabaseInterface::MakePair("Hexblade", SpellConstantsEnum::HEXBLADE),
-				QDatabaseInterface::MakePair("Shugenja", SpellConstantsEnum::SHUGENJA),
-				QDatabaseInterface::MakePair("Wu Jen", SpellConstantsEnum::WU_JEN) };
+	const auto bitPairs = {	QDatabaseInterface::MakePair("Adept", SpellEnum::ADEPT),
+				QDatabaseInterface::MakePair("Artificer", SpellEnum::ARTIFICER),
+				QDatabaseInterface::MakePair("Beguiler", SpellEnum::BEGUILER),
+				QDatabaseInterface::MakePair("Death Delver", SpellEnum::DEATH_DELVER),
+				QDatabaseInterface::MakePair("Dread Necromancer", SpellEnum::DREAD_NECROMANCER),
+				QDatabaseInterface::MakePair("Duskblade", SpellEnum::DUSKBLADE),
+				QDatabaseInterface::MakePair("Healer", SpellEnum::HEALER),
+				QDatabaseInterface::MakePair("Hexblade", SpellEnum::HEXBLADE),
+				QDatabaseInterface::MakePair("Shugenja", SpellEnum::SHUGENJA),
+				QDatabaseInterface::MakePair("Wu Jen", SpellEnum::WU_JEN) };
 	
-	const auto botPairs = {	QDatabaseInterface::MakePair("Assassin", SpellConstantsEnum::ASSASSIN),
-					QDatabaseInterface::MakePair("Blackguard", SpellConstantsEnum::BLACKGUARD) };
+	const auto botPairs = {	QDatabaseInterface::MakePair("Assassin", SpellEnum::ASSASSIN),
+					QDatabaseInterface::MakePair("Blackguard", SpellEnum::BLACKGUARD) };
 	
-	const auto betPairs = {	QDatabaseInterface::MakePair("Arcane Artifact", SpellConstantsEnum::ARCANE_ARTIFACT),
-				QDatabaseInterface::MakePair("Corrupt", SpellConstantsEnum::CORRUPT),
-				QDatabaseInterface::MakePair("Divine Artifact", SpellConstantsEnum::DIVINE_ARTIFACT),
-				QDatabaseInterface::MakePair("Initiate", SpellConstantsEnum::INITIATE),
-				QDatabaseInterface::MakePair("Oneiromancy", SpellConstantsEnum::ONEIROMANCY),
-				QDatabaseInterface::MakePair("Sanctified", SpellConstantsEnum::SANCTIFIED) };
+	const auto betPairs = {	QDatabaseInterface::MakePair("Arcane Artifact", SpellEnum::ARCANE_ARTIFACT),
+				QDatabaseInterface::MakePair("Corrupt", SpellEnum::CORRUPT),
+				QDatabaseInterface::MakePair("Divine Artifact", SpellEnum::DIVINE_ARTIFACT),
+				QDatabaseInterface::MakePair("Initiate", SpellEnum::INITIATE),
+				QDatabaseInterface::MakePair("Oneiromancy", SpellEnum::ONEIROMANCY),
+				QDatabaseInterface::MakePair("Sanctified", SpellEnum::SANCTIFIED) };
 	
-	const auto butPairs = {	QDatabaseInterface::MakePair("Air", SpellConstantsEnum::AIR_DOMAIN),
-				QDatabaseInterface::MakePair("Abyss", SpellConstantsEnum::ABYSS_DOMAIN),
-				QDatabaseInterface::MakePair("Animal", SpellConstantsEnum::ANIMAL_DOMAIN),
-				QDatabaseInterface::MakePair("Arborea", SpellConstantsEnum::ARBOREA_DOMAIN),
-				QDatabaseInterface::MakePair("Baator", SpellConstantsEnum::BAATOR_DOMAIN),
-				QDatabaseInterface::MakePair("Balance", SpellConstantsEnum::BALANCE_DOMAIN),
-				QDatabaseInterface::MakePair("Blackwater", SpellConstantsEnum::BLACKWATER_DOMAIN),
-				QDatabaseInterface::MakePair("Cavern", SpellConstantsEnum::CAVERN_DOMAIN),
-				QDatabaseInterface::MakePair("Celerity", SpellConstantsEnum::CELERITY_DOMAIN),
-				QDatabaseInterface::MakePair("Celestia", SpellConstantsEnum::CELESTIA_DOMAIN),
-				QDatabaseInterface::MakePair("Chaos", SpellConstantsEnum::CHAOS_DOMAIN),
-				QDatabaseInterface::MakePair("Charm", SpellConstantsEnum::CHARM_DOMAIN),
-				QDatabaseInterface::MakePair("Cold", SpellConstantsEnum::COLD_DOMAIN),
-				QDatabaseInterface::MakePair("Community", SpellConstantsEnum::COMMUNITY_DOMAIN),
-				QDatabaseInterface::MakePair("Competition", SpellConstantsEnum::COMPETITION_DOMAIN),
-				QDatabaseInterface::MakePair("Corruption", SpellConstantsEnum::CORRUPTION_DOMAIN),
-				QDatabaseInterface::MakePair("Courage", SpellConstantsEnum::COURAGE_DOMAIN),
-				QDatabaseInterface::MakePair("Craft", SpellConstantsEnum::CRAFT_DOMAIN),
-				QDatabaseInterface::MakePair("Creation", SpellConstantsEnum::CREATION_DOMAIN),
-				QDatabaseInterface::MakePair("Darkness", SpellConstantsEnum::DARKNESS_DOMAIN),
-				QDatabaseInterface::MakePair("Death", SpellConstantsEnum::DEATH_DOMAIN),
-				QDatabaseInterface::MakePair("Deathbound", SpellConstantsEnum::DEATHBOUND_DOMAIN),
-				QDatabaseInterface::MakePair("Demonic", SpellConstantsEnum::DEMONIC_DOMAIN),
-				QDatabaseInterface::MakePair("Destruction", SpellConstantsEnum::DESTRUCTION_DOMAIN),
-				QDatabaseInterface::MakePair("Diabolic", SpellConstantsEnum::DIABOLIC_DOMAIN),
-				QDatabaseInterface::MakePair("Domination", SpellConstantsEnum::DOMINATION_DOMAIN),
-				QDatabaseInterface::MakePair("Dragon", SpellConstantsEnum::DRAGON_DOMAIN),
-				QDatabaseInterface::MakePair("Dream", SpellConstantsEnum::DREAM_DOMAIN),
-				QDatabaseInterface::MakePair("Drow", SpellConstantsEnum::DROW_DOMAIN),
-				QDatabaseInterface::MakePair("Dwarf", SpellConstantsEnum::DWARF_DOMAIN),
-				QDatabaseInterface::MakePair("Earth", SpellConstantsEnum::EARTH_DOMAIN),
-				QDatabaseInterface::MakePair("Elf", SpellConstantsEnum::ELF_DOMAIN),
-				QDatabaseInterface::MakePair("Elysium", SpellConstantsEnum::ELYSIUM_DOMAIN),
-				QDatabaseInterface::MakePair("Entropy", SpellConstantsEnum::ENTROPY_DOMAIN),
-				QDatabaseInterface::MakePair("Envy", SpellConstantsEnum::ENVY_DOMAIN),
-				QDatabaseInterface::MakePair("Evil", SpellConstantsEnum::EVIL_DOMAIN),
-				QDatabaseInterface::MakePair("Family", SpellConstantsEnum::FAMILY_DOMAIN),
-				QDatabaseInterface::MakePair("Fate", SpellConstantsEnum::FATE_DOMAIN),
-				QDatabaseInterface::MakePair("Fire", SpellConstantsEnum::FIRE_DOMAIN),
-				QDatabaseInterface::MakePair("Force", SpellConstantsEnum::FORCE_DOMAIN),
-				QDatabaseInterface::MakePair("Fury", SpellConstantsEnum::FURY_DOMAIN),
-				QDatabaseInterface::MakePair("Glory", SpellConstantsEnum::GLORY_DOMAIN),
-				QDatabaseInterface::MakePair("Gluttony", SpellConstantsEnum::GLUTTONY_DOMAIN),
-				QDatabaseInterface::MakePair("Good", SpellConstantsEnum::GOOD_DOMAIN),
-				QDatabaseInterface::MakePair("Gnome", SpellConstantsEnum::GNOME_DOMAIN),
-				QDatabaseInterface::MakePair("Greed", SpellConstantsEnum::GREED_DOMAIN),
-				QDatabaseInterface::MakePair("Hades", SpellConstantsEnum::HADES_DOMAIN),
-				QDatabaseInterface::MakePair("Halfling", SpellConstantsEnum::HALFLING_DOMAIN),
-				QDatabaseInterface::MakePair("Hatred", SpellConstantsEnum::HATRED_DOMAIN),
-				QDatabaseInterface::MakePair("Healing", SpellConstantsEnum::HEALING_DOMAIN),
-				QDatabaseInterface::MakePair("Hunger", SpellConstantsEnum::HUNGER_DOMAIN),
-				QDatabaseInterface::MakePair("Illusion", SpellConstantsEnum::ILLUSION_DOMAIN),
-				QDatabaseInterface::MakePair("Incarnum", SpellConstantsEnum::INCARNUM_DOMAIN),
-				QDatabaseInterface::MakePair("Inquisition", SpellConstantsEnum::INQUISITION_DOMAIN),
-				QDatabaseInterface::MakePair("Knowledge", SpellConstantsEnum::KNOWLEDGE_DOMAIN),
-				QDatabaseInterface::MakePair("Law", SpellConstantsEnum::LAW_DOMAIN),
-				QDatabaseInterface::MakePair("Liberation", SpellConstantsEnum::LIBERATION_DOMAIN),
-				QDatabaseInterface::MakePair("Limbo", SpellConstantsEnum::LIMBO_DOMAIN),
-				QDatabaseInterface::MakePair("Luck", SpellConstantsEnum::LUCK_DOMAIN),
-				QDatabaseInterface::MakePair("Lust", SpellConstantsEnum::LUST_DOMAIN),
-				QDatabaseInterface::MakePair("Magic", SpellConstantsEnum::MAGIC_DOMAIN),
-				QDatabaseInterface::MakePair("Madness", SpellConstantsEnum::MADNESS_DOMAIN),
-				QDatabaseInterface::MakePair("Mechanus", SpellConstantsEnum::MECHANUS_DOMAIN),
-				QDatabaseInterface::MakePair("Mentalism", SpellConstantsEnum::MENTALISM_DOMAIN),
-				QDatabaseInterface::MakePair("Metal", SpellConstantsEnum::METAL_DOMAIN),
-				QDatabaseInterface::MakePair("Mind", SpellConstantsEnum::MIND_DOMAIN),
-				QDatabaseInterface::MakePair("Moon", SpellConstantsEnum::MOON_DOMAIN),
-				QDatabaseInterface::MakePair("Mysticism", SpellConstantsEnum::MYSTICISM_DOMAIN),
-				QDatabaseInterface::MakePair("Nobility", SpellConstantsEnum::NOBILITY_DOMAIN),
-				QDatabaseInterface::MakePair("Ocean", SpellConstantsEnum::OCEAN_DOMAIN),
-				QDatabaseInterface::MakePair("Ooze", SpellConstantsEnum::OOZE_DOMAIN),
-				QDatabaseInterface::MakePair("Oracle", SpellConstantsEnum::ORACLE_DOMAIN),
-				QDatabaseInterface::MakePair("Orc", SpellConstantsEnum::ORC_DOMAIN),
-				QDatabaseInterface::MakePair("Pact", SpellConstantsEnum::PACT_DOMAIN),
-				QDatabaseInterface::MakePair("Pestilence", SpellConstantsEnum::PESTILENCE_DOMAIN),
-				QDatabaseInterface::MakePair("Planning", SpellConstantsEnum::PLANNING_DOMAIN),
-				QDatabaseInterface::MakePair("Plant", SpellConstantsEnum::PLANT_DOMAIN),
-				QDatabaseInterface::MakePair("Portal", SpellConstantsEnum::PORTAL_DOMAIN),
-				QDatabaseInterface::MakePair("Pride", SpellConstantsEnum::PRIDE_DOMAIN),
-				QDatabaseInterface::MakePair("Protection", SpellConstantsEnum::PROTECTION_DOMAIN),
-				QDatabaseInterface::MakePair("Purification", SpellConstantsEnum::PURIFICATION_DOMAIN),
-				QDatabaseInterface::MakePair("Renewal", SpellConstantsEnum::RENEWAL_DOMAIN),
-				QDatabaseInterface::MakePair("Repose", SpellConstantsEnum::REPOSE_DOMAIN),
-				QDatabaseInterface::MakePair("Retribution", SpellConstantsEnum::RETRIBUTION_DOMAIN),
-				QDatabaseInterface::MakePair("Revered Ancestor", SpellConstantsEnum::REVERED_ANCESTOR_DOMAIN),
-				QDatabaseInterface::MakePair("Rune", SpellConstantsEnum::RUNE_DOMAIN),
-				QDatabaseInterface::MakePair("Sand", SpellConstantsEnum::SAND_DOMAIN),
-				QDatabaseInterface::MakePair("Scalykind", SpellConstantsEnum::SCALYKIND_DOMAIN),
-				QDatabaseInterface::MakePair("Seafolk", SpellConstantsEnum::SEAFOLK_DOMAIN),
-				QDatabaseInterface::MakePair("Slime", SpellConstantsEnum::SLIME_DOMAIN),
-				QDatabaseInterface::MakePair("Sloth", SpellConstantsEnum::SLOTH_DOMAIN),
-				QDatabaseInterface::MakePair("Spell", SpellConstantsEnum::SPELL_DOMAIN),
-				QDatabaseInterface::MakePair("Spider", SpellConstantsEnum::SPIDER_DOMAIN),
-				QDatabaseInterface::MakePair("Spite", SpellConstantsEnum::SPITE_DOMAIN),
-				QDatabaseInterface::MakePair("Storm", SpellConstantsEnum::STORM_DOMAIN),
-				QDatabaseInterface::MakePair("Strength", SpellConstantsEnum::STRENGTH_DOMAIN),
-				QDatabaseInterface::MakePair("Suffering", SpellConstantsEnum::SUFFERING_DOMAIN),
-				QDatabaseInterface::MakePair("Summer", SpellConstantsEnum::SUMMER_DOMAIN),
-				QDatabaseInterface::MakePair("Summoner", SpellConstantsEnum::SUMMONER_DOMAIN),
-				QDatabaseInterface::MakePair("Sun", SpellConstantsEnum::SUN_DOMAIN),
-				QDatabaseInterface::MakePair("Temptation", SpellConstantsEnum::TEMPTATION_DOMAIN),
-				QDatabaseInterface::MakePair("Thirst", SpellConstantsEnum::THIRST_DOMAIN),
-				QDatabaseInterface::MakePair("Time", SpellConstantsEnum::TIME_DOMAIN),
-				QDatabaseInterface::MakePair("Trade", SpellConstantsEnum::TRADE_DOMAIN),
-				QDatabaseInterface::MakePair("Transformation", SpellConstantsEnum::TRANSFORMATION_DOMAIN),
-				QDatabaseInterface::MakePair("Travel", SpellConstantsEnum::TRAVEL_DOMAIN),
-				QDatabaseInterface::MakePair("Trickery", SpellConstantsEnum::TRICKERY_DOMAIN),
-				QDatabaseInterface::MakePair("Truth", SpellConstantsEnum::TRUTH_DOMAIN),
-				QDatabaseInterface::MakePair("Tyranny", SpellConstantsEnum::TYRANNY_DOMAIN),
-				QDatabaseInterface::MakePair("Undeath", SpellConstantsEnum::UNDEATH_DOMAIN),
-				QDatabaseInterface::MakePair("Vile Darkness", SpellConstantsEnum::VILE_DARKNESS_DOMAIN),
-				QDatabaseInterface::MakePair("War", SpellConstantsEnum::WAR_DOMAIN),
-				QDatabaseInterface::MakePair("Warforged", SpellConstantsEnum::WARFORGED_DOMAIN),
-				QDatabaseInterface::MakePair("Water", SpellConstantsEnum::WATER_DOMAIN),
-				QDatabaseInterface::MakePair("Wealth", SpellConstantsEnum::WEALTH_DOMAIN),
-				QDatabaseInterface::MakePair("Windstorm", SpellConstantsEnum::WINDSTORM_DOMAIN),
-				QDatabaseInterface::MakePair("Wrath", SpellConstantsEnum::WRATH_DOMAIN) };
+	const auto butPairs = {	QDatabaseInterface::MakePair("Air", SpellEnum::AIR_DOMAIN),
+				QDatabaseInterface::MakePair("Abyss", SpellEnum::ABYSS_DOMAIN),
+				QDatabaseInterface::MakePair("Animal", SpellEnum::ANIMAL_DOMAIN),
+				QDatabaseInterface::MakePair("Arborea", SpellEnum::ARBOREA_DOMAIN),
+				QDatabaseInterface::MakePair("Baator", SpellEnum::BAATOR_DOMAIN),
+				QDatabaseInterface::MakePair("Balance", SpellEnum::BALANCE_DOMAIN),
+				QDatabaseInterface::MakePair("Blackwater", SpellEnum::BLACKWATER_DOMAIN),
+				QDatabaseInterface::MakePair("Cavern", SpellEnum::CAVERN_DOMAIN),
+				QDatabaseInterface::MakePair("Celerity", SpellEnum::CELERITY_DOMAIN),
+				QDatabaseInterface::MakePair("Celestia", SpellEnum::CELESTIA_DOMAIN),
+				QDatabaseInterface::MakePair("Chaos", SpellEnum::CHAOS_DOMAIN),
+				QDatabaseInterface::MakePair("Charm", SpellEnum::CHARM_DOMAIN),
+				QDatabaseInterface::MakePair("Cold", SpellEnum::COLD_DOMAIN),
+				QDatabaseInterface::MakePair("Community", SpellEnum::COMMUNITY_DOMAIN),
+				QDatabaseInterface::MakePair("Competition", SpellEnum::COMPETITION_DOMAIN),
+				QDatabaseInterface::MakePair("Corruption", SpellEnum::CORRUPTION_DOMAIN),
+				QDatabaseInterface::MakePair("Courage", SpellEnum::COURAGE_DOMAIN),
+				QDatabaseInterface::MakePair("Craft", SpellEnum::CRAFT_DOMAIN),
+				QDatabaseInterface::MakePair("Creation", SpellEnum::CREATION_DOMAIN),
+				QDatabaseInterface::MakePair("Darkness", SpellEnum::DARKNESS_DOMAIN),
+				QDatabaseInterface::MakePair("Death", SpellEnum::DEATH_DOMAIN),
+				QDatabaseInterface::MakePair("Deathbound", SpellEnum::DEATHBOUND_DOMAIN),
+				QDatabaseInterface::MakePair("Demonic", SpellEnum::DEMONIC_DOMAIN),
+				QDatabaseInterface::MakePair("Destruction", SpellEnum::DESTRUCTION_DOMAIN),
+				QDatabaseInterface::MakePair("Diabolic", SpellEnum::DIABOLIC_DOMAIN),
+				QDatabaseInterface::MakePair("Domination", SpellEnum::DOMINATION_DOMAIN),
+				QDatabaseInterface::MakePair("Dragon", SpellEnum::DRAGON_DOMAIN),
+				QDatabaseInterface::MakePair("Dream", SpellEnum::DREAM_DOMAIN),
+				QDatabaseInterface::MakePair("Drow", SpellEnum::DROW_DOMAIN),
+				QDatabaseInterface::MakePair("Dwarf", SpellEnum::DWARF_DOMAIN),
+				QDatabaseInterface::MakePair("Earth", SpellEnum::EARTH_DOMAIN),
+				QDatabaseInterface::MakePair("Elf", SpellEnum::ELF_DOMAIN),
+				QDatabaseInterface::MakePair("Elysium", SpellEnum::ELYSIUM_DOMAIN),
+				QDatabaseInterface::MakePair("Entropy", SpellEnum::ENTROPY_DOMAIN),
+				QDatabaseInterface::MakePair("Envy", SpellEnum::ENVY_DOMAIN),
+				QDatabaseInterface::MakePair("Evil", SpellEnum::EVIL_DOMAIN),
+				QDatabaseInterface::MakePair("Family", SpellEnum::FAMILY_DOMAIN),
+				QDatabaseInterface::MakePair("Fate", SpellEnum::FATE_DOMAIN),
+				QDatabaseInterface::MakePair("Fire", SpellEnum::FIRE_DOMAIN),
+				QDatabaseInterface::MakePair("Force", SpellEnum::FORCE_DOMAIN),
+				QDatabaseInterface::MakePair("Fury", SpellEnum::FURY_DOMAIN),
+				QDatabaseInterface::MakePair("Glory", SpellEnum::GLORY_DOMAIN),
+				QDatabaseInterface::MakePair("Gluttony", SpellEnum::GLUTTONY_DOMAIN),
+				QDatabaseInterface::MakePair("Good", SpellEnum::GOOD_DOMAIN),
+				QDatabaseInterface::MakePair("Gnome", SpellEnum::GNOME_DOMAIN),
+				QDatabaseInterface::MakePair("Greed", SpellEnum::GREED_DOMAIN),
+				QDatabaseInterface::MakePair("Hades", SpellEnum::HADES_DOMAIN),
+				QDatabaseInterface::MakePair("Halfling", SpellEnum::HALFLING_DOMAIN),
+				QDatabaseInterface::MakePair("Hatred", SpellEnum::HATRED_DOMAIN),
+				QDatabaseInterface::MakePair("Healing", SpellEnum::HEALING_DOMAIN),
+				QDatabaseInterface::MakePair("Hunger", SpellEnum::HUNGER_DOMAIN),
+				QDatabaseInterface::MakePair("Illusion", SpellEnum::ILLUSION_DOMAIN),
+				QDatabaseInterface::MakePair("Incarnum", SpellEnum::INCARNUM_DOMAIN),
+				QDatabaseInterface::MakePair("Inquisition", SpellEnum::INQUISITION_DOMAIN),
+				QDatabaseInterface::MakePair("Knowledge", SpellEnum::KNOWLEDGE_DOMAIN),
+				QDatabaseInterface::MakePair("Law", SpellEnum::LAW_DOMAIN),
+				QDatabaseInterface::MakePair("Liberation", SpellEnum::LIBERATION_DOMAIN),
+				QDatabaseInterface::MakePair("Limbo", SpellEnum::LIMBO_DOMAIN),
+				QDatabaseInterface::MakePair("Luck", SpellEnum::LUCK_DOMAIN),
+				QDatabaseInterface::MakePair("Lust", SpellEnum::LUST_DOMAIN),
+				QDatabaseInterface::MakePair("Magic", SpellEnum::MAGIC_DOMAIN),
+				QDatabaseInterface::MakePair("Madness", SpellEnum::MADNESS_DOMAIN),
+				QDatabaseInterface::MakePair("Mechanus", SpellEnum::MECHANUS_DOMAIN),
+				QDatabaseInterface::MakePair("Mentalism", SpellEnum::MENTALISM_DOMAIN),
+				QDatabaseInterface::MakePair("Metal", SpellEnum::METAL_DOMAIN),
+				QDatabaseInterface::MakePair("Mind", SpellEnum::MIND_DOMAIN),
+				QDatabaseInterface::MakePair("Moon", SpellEnum::MOON_DOMAIN),
+				QDatabaseInterface::MakePair("Mysticism", SpellEnum::MYSTICISM_DOMAIN),
+				QDatabaseInterface::MakePair("Nobility", SpellEnum::NOBILITY_DOMAIN),
+				QDatabaseInterface::MakePair("Ocean", SpellEnum::OCEAN_DOMAIN),
+				QDatabaseInterface::MakePair("Ooze", SpellEnum::OOZE_DOMAIN),
+				QDatabaseInterface::MakePair("Oracle", SpellEnum::ORACLE_DOMAIN),
+				QDatabaseInterface::MakePair("Orc", SpellEnum::ORC_DOMAIN),
+				QDatabaseInterface::MakePair("Pact", SpellEnum::PACT_DOMAIN),
+				QDatabaseInterface::MakePair("Pestilence", SpellEnum::PESTILENCE_DOMAIN),
+				QDatabaseInterface::MakePair("Planning", SpellEnum::PLANNING_DOMAIN),
+				QDatabaseInterface::MakePair("Plant", SpellEnum::PLANT_DOMAIN),
+				QDatabaseInterface::MakePair("Portal", SpellEnum::PORTAL_DOMAIN),
+				QDatabaseInterface::MakePair("Pride", SpellEnum::PRIDE_DOMAIN),
+				QDatabaseInterface::MakePair("Protection", SpellEnum::PROTECTION_DOMAIN),
+				QDatabaseInterface::MakePair("Purification", SpellEnum::PURIFICATION_DOMAIN),
+				QDatabaseInterface::MakePair("Renewal", SpellEnum::RENEWAL_DOMAIN),
+				QDatabaseInterface::MakePair("Repose", SpellEnum::REPOSE_DOMAIN),
+				QDatabaseInterface::MakePair("Retribution", SpellEnum::RETRIBUTION_DOMAIN),
+				QDatabaseInterface::MakePair("Revered Ancestor", SpellEnum::REVERED_ANCESTOR_DOMAIN),
+				QDatabaseInterface::MakePair("Rune", SpellEnum::RUNE_DOMAIN),
+				QDatabaseInterface::MakePair("Sand", SpellEnum::SAND_DOMAIN),
+				QDatabaseInterface::MakePair("Scalykind", SpellEnum::SCALYKIND_DOMAIN),
+				QDatabaseInterface::MakePair("Seafolk", SpellEnum::SEAFOLK_DOMAIN),
+				QDatabaseInterface::MakePair("Slime", SpellEnum::SLIME_DOMAIN),
+				QDatabaseInterface::MakePair("Sloth", SpellEnum::SLOTH_DOMAIN),
+				QDatabaseInterface::MakePair("Spell", SpellEnum::SPELL_DOMAIN),
+				QDatabaseInterface::MakePair("Spider", SpellEnum::SPIDER_DOMAIN),
+				QDatabaseInterface::MakePair("Spite", SpellEnum::SPITE_DOMAIN),
+				QDatabaseInterface::MakePair("Storm", SpellEnum::STORM_DOMAIN),
+				QDatabaseInterface::MakePair("Strength", SpellEnum::STRENGTH_DOMAIN),
+				QDatabaseInterface::MakePair("Suffering", SpellEnum::SUFFERING_DOMAIN),
+				QDatabaseInterface::MakePair("Summer", SpellEnum::SUMMER_DOMAIN),
+				QDatabaseInterface::MakePair("Summoner", SpellEnum::SUMMONER_DOMAIN),
+				QDatabaseInterface::MakePair("Sun", SpellEnum::SUN_DOMAIN),
+				QDatabaseInterface::MakePair("Temptation", SpellEnum::TEMPTATION_DOMAIN),
+				QDatabaseInterface::MakePair("Thirst", SpellEnum::THIRST_DOMAIN),
+				QDatabaseInterface::MakePair("Time", SpellEnum::TIME_DOMAIN),
+				QDatabaseInterface::MakePair("Trade", SpellEnum::TRADE_DOMAIN),
+				QDatabaseInterface::MakePair("Transformation", SpellEnum::TRANSFORMATION_DOMAIN),
+				QDatabaseInterface::MakePair("Travel", SpellEnum::TRAVEL_DOMAIN),
+				QDatabaseInterface::MakePair("Trickery", SpellEnum::TRICKERY_DOMAIN),
+				QDatabaseInterface::MakePair("Truth", SpellEnum::TRUTH_DOMAIN),
+				QDatabaseInterface::MakePair("Tyranny", SpellEnum::TYRANNY_DOMAIN),
+				QDatabaseInterface::MakePair("Undeath", SpellEnum::UNDEATH_DOMAIN),
+				QDatabaseInterface::MakePair("Vile Darkness", SpellEnum::VILE_DARKNESS_DOMAIN),
+				QDatabaseInterface::MakePair("War", SpellEnum::WAR_DOMAIN),
+				QDatabaseInterface::MakePair("Warforged", SpellEnum::WARFORGED_DOMAIN),
+				QDatabaseInterface::MakePair("Water", SpellEnum::WATER_DOMAIN),
+				QDatabaseInterface::MakePair("Wealth", SpellEnum::WEALTH_DOMAIN),
+				QDatabaseInterface::MakePair("Windstorm", SpellEnum::WINDSTORM_DOMAIN),
+				QDatabaseInterface::MakePair("Wrath", SpellEnum::WRATH_DOMAIN) };
 	
 	const auto baseClassButton = new QPushButton("Base Classes");
 	QDatabaseInterface::multibits.emplace_back(baseClassButton, CustomBitset());
@@ -281,18 +281,18 @@ void QDatabaseInterface<SpellConstantsEnum>::initialiseSpecial(const QFont& font
 }
 
 template<>
-void QDatabaseInterface<PowerConstantsEnum>::initialiseSpecial(const QFont& font, QGridLayout* layout)
+void QDatabaseInterface<PowerEnum>::initialiseSpecial(const QFont& font, QGridLayout* layout)
 {
 	const auto specialBox = new QGroupBox("Special", this);
 	const auto specialLayout = new QGridLayout();
 	
-	const auto bitPairs = {	QDatabaseInterface::MakePair("Body Leech", PowerConstantsEnum::BODY_LEECH),
-				QDatabaseInterface::MakePair("Egoist", PowerConstantsEnum::EGOIST),
-				QDatabaseInterface::MakePair("Kineticist", PowerConstantsEnum::KINETICIST),
-				QDatabaseInterface::MakePair("Nomad", PowerConstantsEnum::NOMAD),
-				QDatabaseInterface::MakePair("Seer", PowerConstantsEnum::SEER),
-				QDatabaseInterface::MakePair("Shaper", PowerConstantsEnum::SHAPER),
-				QDatabaseInterface::MakePair("Telepath", PowerConstantsEnum::TELEPATH) };
+	const auto bitPairs = {	QDatabaseInterface::MakePair("Body Leech", PowerEnum::BODY_LEECH),
+				QDatabaseInterface::MakePair("Egoist", PowerEnum::EGOIST),
+				QDatabaseInterface::MakePair("Kineticist", PowerEnum::KINETICIST),
+				QDatabaseInterface::MakePair("Nomad", PowerEnum::NOMAD),
+				QDatabaseInterface::MakePair("Seer", PowerEnum::SEER),
+				QDatabaseInterface::MakePair("Shaper", PowerEnum::SHAPER),
+				QDatabaseInterface::MakePair("Telepath", PowerEnum::TELEPATH) };
 	
 	auto count = 0;
 	
@@ -307,40 +307,40 @@ void QDatabaseInterface<PowerConstantsEnum>::initialiseSpecial(const QFont& font
 		QDatabaseInterface::bits.push_back(pr);
 	}
 	
-	const auto butPairs = {	QDatabaseInterface::MakePair("Air", PowerConstantsEnum::AIR_MANTLE),
-				QDatabaseInterface::MakePair("Chaos", PowerConstantsEnum::CHAOS_MANTLE),
-				QDatabaseInterface::MakePair("Communication", PowerConstantsEnum::COMMUNICATION_MANTLE),
-				QDatabaseInterface::MakePair("Conflict", PowerConstantsEnum::CONFLICT_MANTLE),
-				QDatabaseInterface::MakePair("Consumption", PowerConstantsEnum::CONSUMPTION_MANTLE),
-				QDatabaseInterface::MakePair("Corruption and Madness", PowerConstantsEnum::CORRUPTION_AND_MADNESS_MANTLE),
-				QDatabaseInterface::MakePair("Creation", PowerConstantsEnum::CREATION_MANTLE),
-				QDatabaseInterface::MakePair("Death", PowerConstantsEnum::DEATH_MANTLE),
-				QDatabaseInterface::MakePair("Deception", PowerConstantsEnum::DECEPTION_MANTLE),
-				QDatabaseInterface::MakePair("Destruction", PowerConstantsEnum::DESTRUCTION_MANTLE),
-				QDatabaseInterface::MakePair("Earth", PowerConstantsEnum::EARTH_MANTLE),
-				QDatabaseInterface::MakePair("Elements", PowerConstantsEnum::ELEMENTS_MANTLE),
-				QDatabaseInterface::MakePair("Energy", PowerConstantsEnum::ENERGY_MANTLE),
-				QDatabaseInterface::MakePair("Evil", PowerConstantsEnum::EVIL_MANTLE),
-				QDatabaseInterface::MakePair("Fate", PowerConstantsEnum::FATE_MANTLE),
-				QDatabaseInterface::MakePair("Fire", PowerConstantsEnum::FIRE_MANTLE),
-				QDatabaseInterface::MakePair("Force", PowerConstantsEnum::FORCE_MANTLE),
-				QDatabaseInterface::MakePair("Freedom", PowerConstantsEnum::FREEDOM_MANTLE),
-				QDatabaseInterface::MakePair("Good", PowerConstantsEnum::GOOD_MANTLE),
-				QDatabaseInterface::MakePair("Guardian", PowerConstantsEnum::GUARDIAN_MANTLE),
-				QDatabaseInterface::MakePair("Justice", PowerConstantsEnum::JUSTICE_MANTLE),
-				QDatabaseInterface::MakePair("Knowledge", PowerConstantsEnum::KNOWLEDGE_MANTLE),
-				QDatabaseInterface::MakePair("Law", PowerConstantsEnum::LAW_MANTLE),
-				QDatabaseInterface::MakePair("Life", PowerConstantsEnum::LIFE_MANTLE),
-				QDatabaseInterface::MakePair("Light and Darkness", PowerConstantsEnum::LIGHT_AND_DARKNESS_MANTLE),
-				QDatabaseInterface::MakePair("Magic", PowerConstantsEnum::MAGIC_MANTLE),
-				QDatabaseInterface::MakePair("Mental Power", PowerConstantsEnum::MENTAL_POWER_MANTLE),
-				QDatabaseInterface::MakePair("Natural World", PowerConstantsEnum::NATURAL_WORLD_MANTLE),
-				QDatabaseInterface::MakePair("Pain and Suffering", PowerConstantsEnum::PAIN_AND_SUFFERING_MANTLE),
-				QDatabaseInterface::MakePair("Physical Power", PowerConstantsEnum::PHYSICAL_POWER_MANTLE),
-				QDatabaseInterface::MakePair("Plane", PowerConstantsEnum::PLANE_MANTLE),
-				QDatabaseInterface::MakePair("Repose", PowerConstantsEnum::REPOSE_MANTLE),
-				QDatabaseInterface::MakePair("Time", PowerConstantsEnum::TIME_MANTLE),
-				QDatabaseInterface::MakePair("Water", PowerConstantsEnum::WATER_MANTLE) };
+	const auto butPairs = {	QDatabaseInterface::MakePair("Air", PowerEnum::AIR_MANTLE),
+				QDatabaseInterface::MakePair("Chaos", PowerEnum::CHAOS_MANTLE),
+				QDatabaseInterface::MakePair("Communication", PowerEnum::COMMUNICATION_MANTLE),
+				QDatabaseInterface::MakePair("Conflict", PowerEnum::CONFLICT_MANTLE),
+				QDatabaseInterface::MakePair("Consumption", PowerEnum::CONSUMPTION_MANTLE),
+				QDatabaseInterface::MakePair("Corruption and Madness", PowerEnum::CORRUPTION_AND_MADNESS_MANTLE),
+				QDatabaseInterface::MakePair("Creation", PowerEnum::CREATION_MANTLE),
+				QDatabaseInterface::MakePair("Death", PowerEnum::DEATH_MANTLE),
+				QDatabaseInterface::MakePair("Deception", PowerEnum::DECEPTION_MANTLE),
+				QDatabaseInterface::MakePair("Destruction", PowerEnum::DESTRUCTION_MANTLE),
+				QDatabaseInterface::MakePair("Earth", PowerEnum::EARTH_MANTLE),
+				QDatabaseInterface::MakePair("Elements", PowerEnum::ELEMENTS_MANTLE),
+				QDatabaseInterface::MakePair("Energy", PowerEnum::ENERGY_MANTLE),
+				QDatabaseInterface::MakePair("Evil", PowerEnum::EVIL_MANTLE),
+				QDatabaseInterface::MakePair("Fate", PowerEnum::FATE_MANTLE),
+				QDatabaseInterface::MakePair("Fire", PowerEnum::FIRE_MANTLE),
+				QDatabaseInterface::MakePair("Force", PowerEnum::FORCE_MANTLE),
+				QDatabaseInterface::MakePair("Freedom", PowerEnum::FREEDOM_MANTLE),
+				QDatabaseInterface::MakePair("Good", PowerEnum::GOOD_MANTLE),
+				QDatabaseInterface::MakePair("Guardian", PowerEnum::GUARDIAN_MANTLE),
+				QDatabaseInterface::MakePair("Justice", PowerEnum::JUSTICE_MANTLE),
+				QDatabaseInterface::MakePair("Knowledge", PowerEnum::KNOWLEDGE_MANTLE),
+				QDatabaseInterface::MakePair("Law", PowerEnum::LAW_MANTLE),
+				QDatabaseInterface::MakePair("Life", PowerEnum::LIFE_MANTLE),
+				QDatabaseInterface::MakePair("Light and Darkness", PowerEnum::LIGHT_AND_DARKNESS_MANTLE),
+				QDatabaseInterface::MakePair("Magic", PowerEnum::MAGIC_MANTLE),
+				QDatabaseInterface::MakePair("Mental Power", PowerEnum::MENTAL_POWER_MANTLE),
+				QDatabaseInterface::MakePair("Natural World", PowerEnum::NATURAL_WORLD_MANTLE),
+				QDatabaseInterface::MakePair("Pain and Suffering", PowerEnum::PAIN_AND_SUFFERING_MANTLE),
+				QDatabaseInterface::MakePair("Physical Power", PowerEnum::PHYSICAL_POWER_MANTLE),
+				QDatabaseInterface::MakePair("Plane", PowerEnum::PLANE_MANTLE),
+				QDatabaseInterface::MakePair("Repose", PowerEnum::REPOSE_MANTLE),
+				QDatabaseInterface::MakePair("Time", PowerEnum::TIME_MANTLE),
+				QDatabaseInterface::MakePair("Water", PowerEnum::WATER_MANTLE) };
 	
 	const auto mantleButton = new QPushButton("Mantles");
 	QDatabaseInterface::multibits.emplace_back(mantleButton, CustomBitset());
@@ -356,46 +356,46 @@ void QDatabaseInterface<PowerConstantsEnum>::initialiseSpecial(const QFont& font
 }
 
 template<>
-void QDatabaseInterface<SpellConstantsEnum>::initialiseFeatures(const QFont& font, QGridLayout* layout)
+void QDatabaseInterface<SpellEnum>::initialiseFeatures(const QFont& font, QGridLayout* layout)
 {
 	const auto arcaneButton = new QPushButton("Arcane");
 	QDatabaseInterface::multibits.emplace_back(arcaneButton, CustomBitset());
 	
 	auto& arcaneBitset = QDatabaseInterface::multibits.back().second;
-	arcaneBitset.set(SpellConstantsEnum::BARD);
-	arcaneBitset.set(SpellConstantsEnum::SORCERER);
-	arcaneBitset.set(SpellConstantsEnum::WIZARD);
+	arcaneBitset.set(SpellEnum::BARD);
+	arcaneBitset.set(SpellEnum::SORCERER);
+	arcaneBitset.set(SpellEnum::WIZARD);
 	
-	arcaneBitset.set(SpellConstantsEnum::ASSASSIN);
-	arcaneBitset.set(SpellConstantsEnum::ARCANE_ARTIFACT);
-	arcaneBitset.set(SpellConstantsEnum::BEGUILER);
-	arcaneBitset.set(SpellConstantsEnum::CORRUPT);
-	arcaneBitset.set(SpellConstantsEnum::DREAD_NECROMANCER);
-	arcaneBitset.set(SpellConstantsEnum::DUSKBLADE);
-	arcaneBitset.set(SpellConstantsEnum::HEXBLADE);
-	arcaneBitset.set(SpellConstantsEnum::ONEIROMANCY);
-	arcaneBitset.set(SpellConstantsEnum::SANCTIFIED);
-	arcaneBitset.set(SpellConstantsEnum::WU_JEN);
+	arcaneBitset.set(SpellEnum::ASSASSIN);
+	arcaneBitset.set(SpellEnum::ARCANE_ARTIFACT);
+	arcaneBitset.set(SpellEnum::BEGUILER);
+	arcaneBitset.set(SpellEnum::CORRUPT);
+	arcaneBitset.set(SpellEnum::DREAD_NECROMANCER);
+	arcaneBitset.set(SpellEnum::DUSKBLADE);
+	arcaneBitset.set(SpellEnum::HEXBLADE);
+	arcaneBitset.set(SpellEnum::ONEIROMANCY);
+	arcaneBitset.set(SpellEnum::SANCTIFIED);
+	arcaneBitset.set(SpellEnum::WU_JEN);
 	
 	const auto divineButton = new QPushButton("Divine");
 	QDatabaseInterface::multibits.emplace_back(divineButton, CustomBitset());
 	
 	auto& divineBitset = QDatabaseInterface::multibits.back().second;
-	divineBitset.set(SpellConstantsEnum::CLERIC);
-	divineBitset.set(SpellConstantsEnum::DRUID);
-	divineBitset.set(SpellConstantsEnum::PALADIN);
-	divineBitset.set(SpellConstantsEnum::RANGER);
+	divineBitset.set(SpellEnum::CLERIC);
+	divineBitset.set(SpellEnum::DRUID);
+	divineBitset.set(SpellEnum::PALADIN);
+	divineBitset.set(SpellEnum::RANGER);
 	
-	divineBitset.set(SpellConstantsEnum::ADEPT);
-	divineBitset.set(SpellConstantsEnum::BLACKGUARD);
-	divineBitset.set(SpellConstantsEnum::CORRUPT);
-	divineBitset.set(SpellConstantsEnum::DEATH_DELVER);
-	divineBitset.set(SpellConstantsEnum::DIVINE_ARTIFACT);
-	divineBitset.set(SpellConstantsEnum::HEALER);
-	divineBitset.set(SpellConstantsEnum::INITIATE);
-	divineBitset.set(SpellConstantsEnum::ONEIROMANCY);
-	divineBitset.set(SpellConstantsEnum::SANCTIFIED);
-	divineBitset.set(SpellConstantsEnum::SHUGENJA);
+	divineBitset.set(SpellEnum::ADEPT);
+	divineBitset.set(SpellEnum::BLACKGUARD);
+	divineBitset.set(SpellEnum::CORRUPT);
+	divineBitset.set(SpellEnum::DEATH_DELVER);
+	divineBitset.set(SpellEnum::DIVINE_ARTIFACT);
+	divineBitset.set(SpellEnum::HEALER);
+	divineBitset.set(SpellEnum::INITIATE);
+	divineBitset.set(SpellEnum::ONEIROMANCY);
+	divineBitset.set(SpellEnum::SANCTIFIED);
+	divineBitset.set(SpellEnum::SHUGENJA);
 	
 	for (const auto& [btn, bset] : QDatabaseInterface::multibits)
 	{
@@ -410,7 +410,7 @@ void QDatabaseInterface<SpellConstantsEnum>::initialiseFeatures(const QFont& fon
 	QDatabaseInterface::multibits.emplace_back(infusionButton, CustomBitset());
 	
 	auto& infusionBitset = QDatabaseInterface::multibits.back().second;
-	infusionBitset.set(SpellConstantsEnum::ARTIFICER);
+	infusionBitset.set(SpellEnum::ARTIFICER);
 	
 	const auto featureBox = new QGroupBox("Types", this);
 	const auto featureLayout = new QHBoxLayout();
@@ -430,13 +430,13 @@ void QDatabaseInterface<SpellConstantsEnum>::initialiseFeatures(const QFont& fon
 }
 
 template<>
-void QDatabaseInterface<PowerConstantsEnum>::initialiseFeatures(const QFont& font, QGridLayout* layout)
+void QDatabaseInterface<PowerEnum>::initialiseFeatures(const QFont& font, QGridLayout* layout)
 {
 	const auto featureBox = new QGroupBox("Features", this);
 	const auto featureLayout = new QHBoxLayout();
 	
-	const auto bitPairs = {	QDatabaseInterface::MakePair("Augment", PowerConstantsEnum::AUGMENT),
-					QDatabaseInterface::MakePair("Experience", PowerConstantsEnum::EXPERIENCE) };
+	const auto bitPairs = {	QDatabaseInterface::MakePair("Augment", PowerEnum::AUGMENT),
+					QDatabaseInterface::MakePair("Experience", PowerEnum::EXPERIENCE) };
 	
 	for (const auto& pr : bitPairs)
 	{
@@ -453,20 +453,20 @@ void QDatabaseInterface<PowerConstantsEnum>::initialiseFeatures(const QFont& fon
 }
 
 template<>
-void QDatabaseInterface<SpellConstantsEnum>::initialiseSchoolsOrDisciplines(const QFont& font, QGridLayout* layout)
+void QDatabaseInterface<SpellEnum>::initialiseSchoolsOrDisciplines(const QFont& font, QGridLayout* layout)
 {
 	const auto schoolBox = new QGroupBox("Schools", this);
 	const auto schoolLayout = new QGridLayout();
 	
-	const auto bitPairs = {	QDatabaseInterface::MakePair("Abjuration", SpellConstantsEnum::ABJURATION),
-				QDatabaseInterface::MakePair("Conjuration", SpellConstantsEnum::CONJURATION),
-				QDatabaseInterface::MakePair("Divination", SpellConstantsEnum::DIVINATION),
-				QDatabaseInterface::MakePair("Enchantment", SpellConstantsEnum::ENCHANTMENT),
-				QDatabaseInterface::MakePair("Evocation", SpellConstantsEnum::EVOCATION),
-				QDatabaseInterface::MakePair("Illusion", SpellConstantsEnum::ILLUSION),
-				QDatabaseInterface::MakePair("Necromancy", SpellConstantsEnum::NECROMANCY),
-				QDatabaseInterface::MakePair("Transmutation", SpellConstantsEnum::TRANSMUTATION),
-				QDatabaseInterface::MakePair("Universal", SpellConstantsEnum::UNIVERSAL) };
+	const auto bitPairs = {	QDatabaseInterface::MakePair("Abjuration", SpellEnum::ABJURATION),
+				QDatabaseInterface::MakePair("Conjuration", SpellEnum::CONJURATION),
+				QDatabaseInterface::MakePair("Divination", SpellEnum::DIVINATION),
+				QDatabaseInterface::MakePair("Enchantment", SpellEnum::ENCHANTMENT),
+				QDatabaseInterface::MakePair("Evocation", SpellEnum::EVOCATION),
+				QDatabaseInterface::MakePair("Illusion", SpellEnum::ILLUSION),
+				QDatabaseInterface::MakePair("Necromancy", SpellEnum::NECROMANCY),
+				QDatabaseInterface::MakePair("Transmutation", SpellEnum::TRANSMUTATION),
+				QDatabaseInterface::MakePair("Universal", SpellEnum::UNIVERSAL) };
 	
 	auto count = 0;
 	
@@ -486,17 +486,17 @@ void QDatabaseInterface<SpellConstantsEnum>::initialiseSchoolsOrDisciplines(cons
 }
 
 template<>
-void QDatabaseInterface<PowerConstantsEnum>::initialiseSchoolsOrDisciplines(const QFont& font, QGridLayout* layout)
+void QDatabaseInterface<PowerEnum>::initialiseSchoolsOrDisciplines(const QFont& font, QGridLayout* layout)
 {
 	const auto disciplineBox = new QGroupBox("Disciplines", this);
 	const auto disciplineLayout = new QHBoxLayout();
 	
-	const auto bitPairs = {	QDatabaseInterface::MakePair("Clairsentience", PowerConstantsEnum::CLAIRSENTIENCE),
-				QDatabaseInterface::MakePair("Metacreativity", PowerConstantsEnum::METACREATIVITY),
-				QDatabaseInterface::MakePair("Psychokinesis", PowerConstantsEnum::PSYCHOKINESIS),
-				QDatabaseInterface::MakePair("Psychometabolism", PowerConstantsEnum::PSYCHOMETABOLISM),
-				QDatabaseInterface::MakePair("Psychoportation", PowerConstantsEnum::PSYCHOPORTATION),
-				QDatabaseInterface::MakePair("Telepathy", PowerConstantsEnum::TELEPATHY) };
+	const auto bitPairs = {	QDatabaseInterface::MakePair("Clairsentience", PowerEnum::CLAIRSENTIENCE),
+				QDatabaseInterface::MakePair("Metacreativity", PowerEnum::METACREATIVITY),
+				QDatabaseInterface::MakePair("Psychokinesis", PowerEnum::PSYCHOKINESIS),
+				QDatabaseInterface::MakePair("Psychometabolism", PowerEnum::PSYCHOMETABOLISM),
+				QDatabaseInterface::MakePair("Psychoportation", PowerEnum::PSYCHOPORTATION),
+				QDatabaseInterface::MakePair("Telepathy", PowerEnum::TELEPATHY) };
 	
 	for (const auto& pr : bitPairs)
 	{
@@ -513,25 +513,25 @@ void QDatabaseInterface<PowerConstantsEnum>::initialiseSchoolsOrDisciplines(cons
 }
 
 template<>
-void QDatabaseInterface<SpellConstantsEnum>::initialiseSubschoolsOrSubdisciplines(const QFont& font, QGridLayout* layout)
+void QDatabaseInterface<SpellEnum>::initialiseSubschoolsOrSubdisciplines(const QFont& font, QGridLayout* layout)
 {
 	const auto subschoolBox = new QGroupBox("Subschools", this);
 	const auto subschoolLayout = new QGridLayout();
 	
-	const auto bitPairs = {	QDatabaseInterface::MakePair("Calling", SpellConstantsEnum::CALLING),
-				QDatabaseInterface::MakePair("Charm", SpellConstantsEnum::CHARM),
-				QDatabaseInterface::MakePair("Compulsion", SpellConstantsEnum::COMPULSION),
-				QDatabaseInterface::MakePair("Creation", SpellConstantsEnum::CREATION),
-				QDatabaseInterface::MakePair("Figment", SpellConstantsEnum::FIGMENT),
-				QDatabaseInterface::MakePair("Glamer", SpellConstantsEnum::GLAMER),
-				QDatabaseInterface::MakePair("Healing", SpellConstantsEnum::HEALING),
-				QDatabaseInterface::MakePair("Pattern", SpellConstantsEnum::PATTERN),
-				QDatabaseInterface::MakePair("Phantasm", SpellConstantsEnum::PHANTASM),
-				QDatabaseInterface::MakePair("Polymorph", SpellConstantsEnum::POLYMORPH),
-				QDatabaseInterface::MakePair("Scrying", SpellConstantsEnum::SCRYING),
-				QDatabaseInterface::MakePair("Shadow", SpellConstantsEnum::SHADOW),
-				QDatabaseInterface::MakePair("Summoning", SpellConstantsEnum::SUMMONING),
-				QDatabaseInterface::MakePair("Teleportation", SpellConstantsEnum::TELEPORTATION) };
+	const auto bitPairs = {	QDatabaseInterface::MakePair("Calling", SpellEnum::CALLING),
+				QDatabaseInterface::MakePair("Charm", SpellEnum::CHARM),
+				QDatabaseInterface::MakePair("Compulsion", SpellEnum::COMPULSION),
+				QDatabaseInterface::MakePair("Creation", SpellEnum::CREATION),
+				QDatabaseInterface::MakePair("Figment", SpellEnum::FIGMENT),
+				QDatabaseInterface::MakePair("Glamer", SpellEnum::GLAMER),
+				QDatabaseInterface::MakePair("Healing", SpellEnum::HEALING),
+				QDatabaseInterface::MakePair("Pattern", SpellEnum::PATTERN),
+				QDatabaseInterface::MakePair("Phantasm", SpellEnum::PHANTASM),
+				QDatabaseInterface::MakePair("Polymorph", SpellEnum::POLYMORPH),
+				QDatabaseInterface::MakePair("Scrying", SpellEnum::SCRYING),
+				QDatabaseInterface::MakePair("Shadow", SpellEnum::SHADOW),
+				QDatabaseInterface::MakePair("Summoning", SpellEnum::SUMMONING),
+				QDatabaseInterface::MakePair("Teleportation", SpellEnum::TELEPORTATION) };
 	
 	auto count = 0;
 	
@@ -551,17 +551,17 @@ void QDatabaseInterface<SpellConstantsEnum>::initialiseSubschoolsOrSubdiscipline
 }
 
 template<>
-void QDatabaseInterface<PowerConstantsEnum>::initialiseSubschoolsOrSubdisciplines(const QFont& font, QGridLayout* layout)
+void QDatabaseInterface<PowerEnum>::initialiseSubschoolsOrSubdisciplines(const QFont& font, QGridLayout* layout)
 {
 	const auto subdisciplineBox = new QGroupBox("Subdisciplines", this);
 	const auto subdisciplineLayout = new QHBoxLayout();
 	
-	const auto bitPairs = {	QDatabaseInterface::MakePair("Charm", PowerConstantsEnum::CHARM),
-				QDatabaseInterface::MakePair("Compulsion", PowerConstantsEnum::COMPULSION),
-				QDatabaseInterface::MakePair("Creation", PowerConstantsEnum::CREATION),
-				QDatabaseInterface::MakePair("Healing", PowerConstantsEnum::HEALING),
-				QDatabaseInterface::MakePair("Scrying", PowerConstantsEnum::SCRYING),
-				QDatabaseInterface::MakePair("Teleportation", PowerConstantsEnum::TELEPORTATION) };
+	const auto bitPairs = {	QDatabaseInterface::MakePair("Charm", PowerEnum::CHARM),
+				QDatabaseInterface::MakePair("Compulsion", PowerEnum::COMPULSION),
+				QDatabaseInterface::MakePair("Creation", PowerEnum::CREATION),
+				QDatabaseInterface::MakePair("Healing", PowerEnum::HEALING),
+				QDatabaseInterface::MakePair("Scrying", PowerEnum::SCRYING),
+				QDatabaseInterface::MakePair("Teleportation", PowerEnum::TELEPORTATION) };
 	
 	for (const auto& pr : bitPairs)
 	{
@@ -578,18 +578,18 @@ void QDatabaseInterface<PowerConstantsEnum>::initialiseSubschoolsOrSubdiscipline
 }
 
 template<>
-void QDatabaseInterface<SpellConstantsEnum>::initialiseMaterialsOrDisplays(const QFont& font, QGridLayout* layout)
+void QDatabaseInterface<SpellEnum>::initialiseMaterialsOrDisplays(const QFont& font, QGridLayout* layout)
 {
 	const auto materialBox = new QGroupBox("Materials", this);
 	const auto materialLayout = new QGridLayout();
 	
-	const auto bitPairs = {	QDatabaseInterface::MakePair("Focus", SpellConstantsEnum::FOCUS),
-				QDatabaseInterface::MakePair("Divine Focus", SpellConstantsEnum::DIVINE_FOCUS),
-				QDatabaseInterface::MakePair("Verbal", SpellConstantsEnum::VERBAL),
-				QDatabaseInterface::MakePair("Somatic", SpellConstantsEnum::SOMATIC),
-				QDatabaseInterface::MakePair("Material", SpellConstantsEnum::MATERIAL),
-				QDatabaseInterface::MakePair("Gold", SpellConstantsEnum::GOLD),
-				QDatabaseInterface::MakePair("Experience", SpellConstantsEnum::EXPERIENCE) };
+	const auto bitPairs = {	QDatabaseInterface::MakePair("Focus", SpellEnum::FOCUS),
+				QDatabaseInterface::MakePair("Divine Focus", SpellEnum::DIVINE_FOCUS),
+				QDatabaseInterface::MakePair("Verbal", SpellEnum::VERBAL),
+				QDatabaseInterface::MakePair("Somatic", SpellEnum::SOMATIC),
+				QDatabaseInterface::MakePair("Material", SpellEnum::MATERIAL),
+				QDatabaseInterface::MakePair("Gold", SpellEnum::GOLD),
+				QDatabaseInterface::MakePair("Experience", SpellEnum::EXPERIENCE) };
 	
 	auto count = 0;
 	
@@ -604,13 +604,13 @@ void QDatabaseInterface<SpellConstantsEnum>::initialiseMaterialsOrDisplays(const
 		QDatabaseInterface::bits.push_back(pr);
 	}
 	
-	const auto butPairs = {	QDatabaseInterface::MakePair("Alignment", SpellConstantsEnum::ALIGNMENT),
-				QDatabaseInterface::MakePair("Corruption", SpellConstantsEnum::CORRUPT),
-				QDatabaseInterface::MakePair("Dragonmark", SpellConstantsEnum::DRAGONMARK),
-				QDatabaseInterface::MakePair("Essentia", SpellConstantsEnum::ESSENTIA),
-				QDatabaseInterface::MakePair("Racial", SpellConstantsEnum::RACIAL),
-				QDatabaseInterface::MakePair("Sacrifice", SpellConstantsEnum::SANCTIFIED),
-				QDatabaseInterface::MakePair("Verbal (Bard only)", SpellConstantsEnum::VERBAL_BARD) };
+	const auto butPairs = {	QDatabaseInterface::MakePair("Alignment", SpellEnum::ALIGNMENT),
+				QDatabaseInterface::MakePair("Corruption", SpellEnum::CORRUPT),
+				QDatabaseInterface::MakePair("Dragonmark", SpellEnum::DRAGONMARK),
+				QDatabaseInterface::MakePair("Essentia", SpellEnum::ESSENTIA),
+				QDatabaseInterface::MakePair("Racial", SpellEnum::RACIAL),
+				QDatabaseInterface::MakePair("Sacrifice", SpellEnum::SANCTIFIED),
+				QDatabaseInterface::MakePair("Verbal (Bard only)", SpellEnum::VERBAL_BARD) };
 	
 	const auto otherComponentButton = new QPushButton("Other");
 	QDatabaseInterface::multibits.emplace_back(otherComponentButton, CustomBitset());
@@ -626,16 +626,16 @@ void QDatabaseInterface<SpellConstantsEnum>::initialiseMaterialsOrDisplays(const
 }
 
 template<>
-void QDatabaseInterface<PowerConstantsEnum>::initialiseMaterialsOrDisplays(const QFont& font, QGridLayout* layout)
+void QDatabaseInterface<PowerEnum>::initialiseMaterialsOrDisplays(const QFont& font, QGridLayout* layout)
 {
 	const auto displayBox = new QGroupBox("Displays", this);
 	const auto displayLayout = new QGridLayout();
 	
-	const auto bitPairs = {	QDatabaseInterface::MakePair("Auditory", PowerConstantsEnum::AUDITORY),
-				QDatabaseInterface::MakePair("Material", PowerConstantsEnum::MATERIAL),
-				QDatabaseInterface::MakePair("Mental", PowerConstantsEnum::MENTAL),
-				QDatabaseInterface::MakePair("Olfactory", PowerConstantsEnum::OLFACTORY),
-				QDatabaseInterface::MakePair("Visual", PowerConstantsEnum::VISUAL) };
+	const auto bitPairs = {	QDatabaseInterface::MakePair("Auditory", PowerEnum::AUDITORY),
+				QDatabaseInterface::MakePair("Material", PowerEnum::MATERIAL),
+				QDatabaseInterface::MakePair("Mental", PowerEnum::MENTAL),
+				QDatabaseInterface::MakePair("Olfactory", PowerEnum::OLFACTORY),
+				QDatabaseInterface::MakePair("Visual", PowerEnum::VISUAL) };
 	
 	auto count = 0;
 	
@@ -655,31 +655,31 @@ void QDatabaseInterface<PowerConstantsEnum>::initialiseMaterialsOrDisplays(const
 }
 
 template<>
-qint32 QDatabaseInterface<SpellConstantsEnum>::initialiseDescriptors(const QFont& font, QGridLayout* layout)
+qint32 QDatabaseInterface<SpellEnum>::initialiseDescriptors(const QFont& font, QGridLayout* layout)
 {
 	const auto descriptorBox = new QGroupBox("Descriptors", this);
 	const auto descriptorLayout = new QGridLayout();
 	
-	const auto bitPairs = {	QDatabaseInterface::MakePair("Acid", SpellConstantsEnum::ACID),
-				QDatabaseInterface::MakePair("Air", SpellConstantsEnum::AIR),
-				QDatabaseInterface::MakePair("Chaotic", SpellConstantsEnum::CHAOTIC),
-				QDatabaseInterface::MakePair("Cold", SpellConstantsEnum::COLD),
-				QDatabaseInterface::MakePair("Darkness", SpellConstantsEnum::DARKNESS),
-				QDatabaseInterface::MakePair("Death", SpellConstantsEnum::DEATH),
-				QDatabaseInterface::MakePair("Earth", SpellConstantsEnum::EARTH),
-				QDatabaseInterface::MakePair("Electricity", SpellConstantsEnum::ELECTRICITY),
-				QDatabaseInterface::MakePair("Evil", SpellConstantsEnum::EVIL),
-				QDatabaseInterface::MakePair("Fear", SpellConstantsEnum::FEAR),
-				QDatabaseInterface::MakePair("Fire", SpellConstantsEnum::FIRE),
-				QDatabaseInterface::MakePair("Force", SpellConstantsEnum::FORCE),
-				QDatabaseInterface::MakePair("Good", SpellConstantsEnum::GOOD),
-				QDatabaseInterface::MakePair("Incarnum", SpellConstantsEnum::INCARNUM),
-				QDatabaseInterface::MakePair("Language", SpellConstantsEnum::LANGUAGE_DEPENDENT),
-				QDatabaseInterface::MakePair("Lawful", SpellConstantsEnum::LAWFUL),
-				QDatabaseInterface::MakePair("Light", SpellConstantsEnum::LIGHT),
-				QDatabaseInterface::MakePair("Mind-Affecting", SpellConstantsEnum::MIND_AFFECTING),
-				QDatabaseInterface::MakePair("Sonic", SpellConstantsEnum::SONIC),
-				QDatabaseInterface::MakePair("Water", SpellConstantsEnum::WATER) };
+	const auto bitPairs = {	QDatabaseInterface::MakePair("Acid", SpellEnum::ACID),
+				QDatabaseInterface::MakePair("Air", SpellEnum::AIR),
+				QDatabaseInterface::MakePair("Chaotic", SpellEnum::CHAOTIC),
+				QDatabaseInterface::MakePair("Cold", SpellEnum::COLD),
+				QDatabaseInterface::MakePair("Darkness", SpellEnum::DARKNESS),
+				QDatabaseInterface::MakePair("Death", SpellEnum::DEATH),
+				QDatabaseInterface::MakePair("Earth", SpellEnum::EARTH),
+				QDatabaseInterface::MakePair("Electricity", SpellEnum::ELECTRICITY),
+				QDatabaseInterface::MakePair("Evil", SpellEnum::EVIL),
+				QDatabaseInterface::MakePair("Fear", SpellEnum::FEAR),
+				QDatabaseInterface::MakePair("Fire", SpellEnum::FIRE),
+				QDatabaseInterface::MakePair("Force", SpellEnum::FORCE),
+				QDatabaseInterface::MakePair("Good", SpellEnum::GOOD),
+				QDatabaseInterface::MakePair("Incarnum", SpellEnum::INCARNUM),
+				QDatabaseInterface::MakePair("Language", SpellEnum::LANGUAGE_DEPENDENT),
+				QDatabaseInterface::MakePair("Lawful", SpellEnum::LAWFUL),
+				QDatabaseInterface::MakePair("Light", SpellEnum::LIGHT),
+				QDatabaseInterface::MakePair("Mind-Affecting", SpellEnum::MIND_AFFECTING),
+				QDatabaseInterface::MakePair("Sonic", SpellEnum::SONIC),
+				QDatabaseInterface::MakePair("Water", SpellEnum::WATER) };
 	
 	auto count = 0;
 	
@@ -694,8 +694,8 @@ qint32 QDatabaseInterface<SpellConstantsEnum>::initialiseDescriptors(const QFont
 		QDatabaseInterface::bits.push_back(pr);
 	}
 	
-	const auto butPairs = { QDatabaseInterface::MakePair("Investiture", SpellConstantsEnum::INVESTITURE),
-				QDatabaseInterface::MakePair("Mindset", SpellConstantsEnum::MINDSET) };
+	const auto butPairs = { QDatabaseInterface::MakePair("Investiture", SpellEnum::INVESTITURE),
+				QDatabaseInterface::MakePair("Mindset", SpellEnum::MINDSET) };
 	
 	const auto otherDescriptorButton = new QPushButton("Other");
 	QDatabaseInterface::multibits.emplace_back(otherDescriptorButton, CustomBitset());
@@ -712,26 +712,26 @@ qint32 QDatabaseInterface<SpellConstantsEnum>::initialiseDescriptors(const QFont
 }
 
 template<>
-qint32 QDatabaseInterface<PowerConstantsEnum>::initialiseDescriptors(const QFont& font, QGridLayout* layout)
+qint32 QDatabaseInterface<PowerEnum>::initialiseDescriptors(const QFont& font, QGridLayout* layout)
 {
 	const auto descriptorBox = new QGroupBox("Descriptors", this);
 	const auto descriptorLayout = new QGridLayout();
 	
-	const auto bitPairs = {	QDatabaseInterface::MakePair("Acid", PowerConstantsEnum::ACID),
-				QDatabaseInterface::MakePair("Cold", PowerConstantsEnum::COLD),
-				QDatabaseInterface::MakePair("Darkness", PowerConstantsEnum::DARKNESS),
-				QDatabaseInterface::MakePair("Death", PowerConstantsEnum::DEATH),
-				QDatabaseInterface::MakePair("Electricity", PowerConstantsEnum::ELECTRICITY),
-				QDatabaseInterface::MakePair("Evil", PowerConstantsEnum::EVIL),
-				QDatabaseInterface::MakePair("Fear", PowerConstantsEnum::FEAR),
-				QDatabaseInterface::MakePair("Fire", PowerConstantsEnum::FIRE),
-				QDatabaseInterface::MakePair("Force", PowerConstantsEnum::FORCE),
-				QDatabaseInterface::MakePair("Good", PowerConstantsEnum::GOOD),
-				QDatabaseInterface::MakePair("Language", PowerConstantsEnum::LANGUAGE_DEPENDENT),
-				QDatabaseInterface::MakePair("Light", PowerConstantsEnum::LIGHT),
-				QDatabaseInterface::MakePair("Mind-Affecting", PowerConstantsEnum::MIND_AFFECTING),
-				QDatabaseInterface::MakePair("Shadow", PowerConstantsEnum::SHADOW),
-				QDatabaseInterface::MakePair("Sonic", PowerConstantsEnum::SONIC) };
+	const auto bitPairs = {	QDatabaseInterface::MakePair("Acid", PowerEnum::ACID),
+				QDatabaseInterface::MakePair("Cold", PowerEnum::COLD),
+				QDatabaseInterface::MakePair("Darkness", PowerEnum::DARKNESS),
+				QDatabaseInterface::MakePair("Death", PowerEnum::DEATH),
+				QDatabaseInterface::MakePair("Electricity", PowerEnum::ELECTRICITY),
+				QDatabaseInterface::MakePair("Evil", PowerEnum::EVIL),
+				QDatabaseInterface::MakePair("Fear", PowerEnum::FEAR),
+				QDatabaseInterface::MakePair("Fire", PowerEnum::FIRE),
+				QDatabaseInterface::MakePair("Force", PowerEnum::FORCE),
+				QDatabaseInterface::MakePair("Good", PowerEnum::GOOD),
+				QDatabaseInterface::MakePair("Language", PowerEnum::LANGUAGE_DEPENDENT),
+				QDatabaseInterface::MakePair("Light", PowerEnum::LIGHT),
+				QDatabaseInterface::MakePair("Mind-Affecting", PowerEnum::MIND_AFFECTING),
+				QDatabaseInterface::MakePair("Shadow", PowerEnum::SHADOW),
+				QDatabaseInterface::MakePair("Sonic", PowerEnum::SONIC) };
 	
 	auto count = 0;
 	
@@ -752,13 +752,13 @@ qint32 QDatabaseInterface<PowerConstantsEnum>::initialiseDescriptors(const QFont
 }
 
 template<>
-void QDatabaseInterface<SpellConstantsEnum>::initialiseSources(const QFont& font, QGridLayout* layout, qint32 delta)
+void QDatabaseInterface<SpellEnum>::initialiseSources(const QFont& font, QGridLayout* layout, qint32 delta)
 {
 	const auto sourceBox = new QGroupBox("Sources", this);
 	const auto sourceLayout = new QVBoxLayout();
 	
-	const auto bitPairs = {	QDatabaseInterface::MakePair("PHB", SpellConstantsEnum::PLAYERS_HANDBOOK),
-				QDatabaseInterface::MakePair("SpC", SpellConstantsEnum::SPELL_COMPENDIUM) };
+	const auto bitPairs = {	QDatabaseInterface::MakePair("PHB", SpellEnum::PLAYERS_HANDBOOK),
+				QDatabaseInterface::MakePair("SpC", SpellEnum::SPELL_COMPENDIUM) };
 	
 	for (const auto& pr : bitPairs)
 	{
@@ -770,44 +770,44 @@ void QDatabaseInterface<SpellConstantsEnum>::initialiseSources(const QFont& font
 		QDatabaseInterface::bits.push_back(pr);
 	}
 	
-	const auto butPairs = {	QDatabaseInterface::MakePair("An", SpellConstantsEnum::ANAUROCH_EMPIRE_OF_SHADE),
-				QDatabaseInterface::MakePair("CCha", SpellConstantsEnum::COMPLETE_CHAMPION),
-				QDatabaseInterface::MakePair("Ci", SpellConstantsEnum::CITYSCAPE),
-				QDatabaseInterface::MakePair("CMge", SpellConstantsEnum::COMPLETE_MAGE),
-				QDatabaseInterface::MakePair("CoS", SpellConstantsEnum::CITY_OF_STORMREACH),
-				QDatabaseInterface::MakePair("CoV", SpellConstantsEnum::CHAMPIONS_OF_VALOR),
-				QDatabaseInterface::MakePair("CR", SpellConstantsEnum::CHAMPIONS_OF_RUIN),
-				QDatabaseInterface::MakePair("CSco", SpellConstantsEnum::COMPLETE_SCOUNDREL),
-				QDatabaseInterface::MakePair("CSW", SpellConstantsEnum::CITY_OF_SPLENDORS_WATERDEEP),
-				QDatabaseInterface::MakePair("DoE", SpellConstantsEnum::DRAGONS_OF_EBERRON),
-				QDatabaseInterface::MakePair("DoF", SpellConstantsEnum::DRAGONS_OF_FAERUN),
-				QDatabaseInterface::MakePair("Dmkd", SpellConstantsEnum::DRAGONMARKED),
-				QDatabaseInterface::MakePair("DrM", SpellConstantsEnum::DRAGON_MAGIC),
-				QDatabaseInterface::MakePair("DrU", SpellConstantsEnum::DROW_OF_THE_UNDERDARK),
-				QDatabaseInterface::MakePair("EDP", SpellConstantsEnum::EXPEDITION_TO_DEMONWEB_PITS),
-				QDatabaseInterface::MakePair("EU", SpellConstantsEnum::EXPEDITION_TO_UNDERMOUNTAIN),
-				QDatabaseInterface::MakePair("FoE", SpellConstantsEnum::FAITHS_OF_EBERRON),
-				QDatabaseInterface::MakePair("FC1", SpellConstantsEnum::FIENDISH_CODEX_I),
-				QDatabaseInterface::MakePair("FC2", SpellConstantsEnum::FIENDISH_CODEX_II),
-				QDatabaseInterface::MakePair("FN", SpellConstantsEnum::FIVE_NATIONS),
-				QDatabaseInterface::MakePair("FW", SpellConstantsEnum::FORGE_OF_WAR),
-				QDatabaseInterface::MakePair("HB", SpellConstantsEnum::HEROES_OF_BATTLE),
-				QDatabaseInterface::MakePair("HH", SpellConstantsEnum::HEROES_OF_HORROR),
-				QDatabaseInterface::MakePair("LoM", SpellConstantsEnum::LORDS_OF_MADNESS),
-				QDatabaseInterface::MakePair("MM4", SpellConstantsEnum::MONSTER_MANUAL_IV),
-				QDatabaseInterface::MakePair("MoE", SpellConstantsEnum::MAGIC_OF_EBERRON),
-				QDatabaseInterface::MakePair("MoI", SpellConstantsEnum::MAGIC_OF_INCARNUM),
-				QDatabaseInterface::MakePair("PGE", SpellConstantsEnum::PLAYERS_GUIDE_TO_EBERRON),
-				QDatabaseInterface::MakePair("PH2", SpellConstantsEnum::PLAYERS_HANDBOOK_II),
-				QDatabaseInterface::MakePair("PoF", SpellConstantsEnum::POWER_OF_FAERUN),
-				QDatabaseInterface::MakePair("Rav", SpellConstantsEnum::EXPEDITION_TO_CASTLE_RAVENLOFT),
-				QDatabaseInterface::MakePair("RDr", SpellConstantsEnum::RACES_OF_THE_DRAGON),
-				QDatabaseInterface::MakePair("RE", SpellConstantsEnum::RACES_OF_EBERRON),
-				QDatabaseInterface::MakePair("Sa", SpellConstantsEnum::SANDSTORM),
-				QDatabaseInterface::MakePair("SoS", SpellConstantsEnum::SECRETS_OF_SARLONA),
-				QDatabaseInterface::MakePair("SoX", SpellConstantsEnum::SECRETS_OF_XENDRIK),
-				QDatabaseInterface::MakePair("Sto", SpellConstantsEnum::STORMWRACK),
-				QDatabaseInterface::MakePair("WL", SpellConstantsEnum::WEAPONS_OF_LEGACY) };
+	const auto butPairs = {	QDatabaseInterface::MakePair("An", SpellEnum::ANAUROCH_EMPIRE_OF_SHADE),
+				QDatabaseInterface::MakePair("CCha", SpellEnum::COMPLETE_CHAMPION),
+				QDatabaseInterface::MakePair("Ci", SpellEnum::CITYSCAPE),
+				QDatabaseInterface::MakePair("CMge", SpellEnum::COMPLETE_MAGE),
+				QDatabaseInterface::MakePair("CoS", SpellEnum::CITY_OF_STORMREACH),
+				QDatabaseInterface::MakePair("CoV", SpellEnum::CHAMPIONS_OF_VALOR),
+				QDatabaseInterface::MakePair("CR", SpellEnum::CHAMPIONS_OF_RUIN),
+				QDatabaseInterface::MakePair("CSco", SpellEnum::COMPLETE_SCOUNDREL),
+				QDatabaseInterface::MakePair("CSW", SpellEnum::CITY_OF_SPLENDORS_WATERDEEP),
+				QDatabaseInterface::MakePair("DoE", SpellEnum::DRAGONS_OF_EBERRON),
+				QDatabaseInterface::MakePair("DoF", SpellEnum::DRAGONS_OF_FAERUN),
+				QDatabaseInterface::MakePair("Dmkd", SpellEnum::DRAGONMARKED),
+				QDatabaseInterface::MakePair("DrM", SpellEnum::DRAGON_MAGIC),
+				QDatabaseInterface::MakePair("DrU", SpellEnum::DROW_OF_THE_UNDERDARK),
+				QDatabaseInterface::MakePair("EDP", SpellEnum::EXPEDITION_TO_DEMONWEB_PITS),
+				QDatabaseInterface::MakePair("EU", SpellEnum::EXPEDITION_TO_UNDERMOUNTAIN),
+				QDatabaseInterface::MakePair("FoE", SpellEnum::FAITHS_OF_EBERRON),
+				QDatabaseInterface::MakePair("FC1", SpellEnum::FIENDISH_CODEX_I),
+				QDatabaseInterface::MakePair("FC2", SpellEnum::FIENDISH_CODEX_II),
+				QDatabaseInterface::MakePair("FN", SpellEnum::FIVE_NATIONS),
+				QDatabaseInterface::MakePair("FW", SpellEnum::FORGE_OF_WAR),
+				QDatabaseInterface::MakePair("HB", SpellEnum::HEROES_OF_BATTLE),
+				QDatabaseInterface::MakePair("HH", SpellEnum::HEROES_OF_HORROR),
+				QDatabaseInterface::MakePair("LoM", SpellEnum::LORDS_OF_MADNESS),
+				QDatabaseInterface::MakePair("MM4", SpellEnum::MONSTER_MANUAL_IV),
+				QDatabaseInterface::MakePair("MoE", SpellEnum::MAGIC_OF_EBERRON),
+				QDatabaseInterface::MakePair("MoI", SpellEnum::MAGIC_OF_INCARNUM),
+				QDatabaseInterface::MakePair("PGE", SpellEnum::PLAYERS_GUIDE_TO_EBERRON),
+				QDatabaseInterface::MakePair("PH2", SpellEnum::PLAYERS_HANDBOOK_II),
+				QDatabaseInterface::MakePair("PoF", SpellEnum::POWER_OF_FAERUN),
+				QDatabaseInterface::MakePair("Rav", SpellEnum::EXPEDITION_TO_CASTLE_RAVENLOFT),
+				QDatabaseInterface::MakePair("RDr", SpellEnum::RACES_OF_THE_DRAGON),
+				QDatabaseInterface::MakePair("RE", SpellEnum::RACES_OF_EBERRON),
+				QDatabaseInterface::MakePair("Sa", SpellEnum::SANDSTORM),
+				QDatabaseInterface::MakePair("SoS", SpellEnum::SECRETS_OF_SARLONA),
+				QDatabaseInterface::MakePair("SoX", SpellEnum::SECRETS_OF_XENDRIK),
+				QDatabaseInterface::MakePair("Sto", SpellEnum::STORMWRACK),
+				QDatabaseInterface::MakePair("WL", SpellEnum::WEAPONS_OF_LEGACY) };
 	
 	const auto otherSourceButton = new QPushButton("Other");
 	QDatabaseInterface::multibits.emplace_back(otherSourceButton, CustomBitset());
@@ -823,13 +823,13 @@ void QDatabaseInterface<SpellConstantsEnum>::initialiseSources(const QFont& font
 }
 
 template<>
-void QDatabaseInterface<PowerConstantsEnum>::initialiseSources(const QFont& font, QGridLayout* layout, qint32 delta)
+void QDatabaseInterface<PowerEnum>::initialiseSources(const QFont& font, QGridLayout* layout, qint32 delta)
 {
 	const auto sourceBox = new QGroupBox("Sources", this);
 	const auto sourceLayout = new QVBoxLayout();
 	
-	const auto bitPairs = {	QDatabaseInterface::MakePair("XPH", PowerConstantsEnum::EXPANDED_PSIONICS_HANDBOOK),
-				QDatabaseInterface::MakePair("CPsi", PowerConstantsEnum::COMPLETE_PSIONIC) };
+	const auto bitPairs = {	QDatabaseInterface::MakePair("XPH", PowerEnum::EXPANDED_PSIONICS_HANDBOOK),
+				QDatabaseInterface::MakePair("CPsi", PowerEnum::COMPLETE_PSIONIC) };
 	
 	for (const auto& pr : bitPairs)
 	{
@@ -841,18 +841,18 @@ void QDatabaseInterface<PowerConstantsEnum>::initialiseSources(const QFont& font
 		QDatabaseInterface::bits.push_back(pr);
 	}
 	
-	const auto butPairs = {	QDatabaseInterface::MakePair("DrM", PowerConstantsEnum::DRAGON_MAGIC),
-				QDatabaseInterface::MakePair("FoE", PowerConstantsEnum::FAITHS_OF_EBERRON),
-				QDatabaseInterface::MakePair("Hyp", PowerConstantsEnum::HYPERCONSCIOUS),
-				QDatabaseInterface::MakePair("MoE", PowerConstantsEnum::MAGIC_OF_EBERRON),
-				QDatabaseInterface::MakePair("MoI", PowerConstantsEnum::MAGIC_OF_INCARNUM),
-				QDatabaseInterface::MakePair("PGE", PowerConstantsEnum::PLAYERS_GUIDE_TO_EBERRON),
-				QDatabaseInterface::MakePair("RDr", PowerConstantsEnum::RACES_OF_THE_DRAGON),
-				QDatabaseInterface::MakePair("RW", PowerConstantsEnum::RACES_OF_THE_WILD),
-				QDatabaseInterface::MakePair("SoS", PowerConstantsEnum::SECRETS_OF_SARLONA),
-				QDatabaseInterface::MakePair("Sto", PowerConstantsEnum::STORMWRACK),
-				QDatabaseInterface::MakePair("WL", PowerConstantsEnum::WEAPONS_OF_LEGACY),
-				QDatabaseInterface::MakePair("Web", PowerConstantsEnum::WEB) };
+	const auto butPairs = {	QDatabaseInterface::MakePair("DrM", PowerEnum::DRAGON_MAGIC),
+				QDatabaseInterface::MakePair("FoE", PowerEnum::FAITHS_OF_EBERRON),
+				QDatabaseInterface::MakePair("Hyp", PowerEnum::HYPERCONSCIOUS),
+				QDatabaseInterface::MakePair("MoE", PowerEnum::MAGIC_OF_EBERRON),
+				QDatabaseInterface::MakePair("MoI", PowerEnum::MAGIC_OF_INCARNUM),
+				QDatabaseInterface::MakePair("PGE", PowerEnum::PLAYERS_GUIDE_TO_EBERRON),
+				QDatabaseInterface::MakePair("RDr", PowerEnum::RACES_OF_THE_DRAGON),
+				QDatabaseInterface::MakePair("RW", PowerEnum::RACES_OF_THE_WILD),
+				QDatabaseInterface::MakePair("SoS", PowerEnum::SECRETS_OF_SARLONA),
+				QDatabaseInterface::MakePair("Sto", PowerEnum::STORMWRACK),
+				QDatabaseInterface::MakePair("WL", PowerEnum::WEAPONS_OF_LEGACY),
+				QDatabaseInterface::MakePair("Web", PowerEnum::WEB) };
 	
 	const auto otherSourceButton = new QPushButton("Other");
 	QDatabaseInterface::multibits.emplace_back(otherSourceButton, CustomBitset());
@@ -868,52 +868,52 @@ void QDatabaseInterface<PowerConstantsEnum>::initialiseSources(const QFont& font
 }
 
 template<>
-void QDatabaseInterface<SpellConstantsEnum>::initialiseBars(const QFont& font, QGridLayout* layout, qint32 delta)
+void QDatabaseInterface<SpellEnum>::initialiseBars(const QFont& font, QGridLayout* layout, qint32 delta)
 {
 	layout->addWidget(QDatabaseInterfaceIntermediary::nameLineEdit, delta + 8, 0, 1, 4);
 	layout->addWidget(QDatabaseInterfaceIntermediary::loreLineEdit, delta + 8, 4, 1, 5);
 	
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::ANAUROCH_EMPIRE_OF_SHADE);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::CHAMPIONS_OF_RUIN);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::CHAMPIONS_OF_VALOR);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::CITY_OF_SPLENDORS_WATERDEEP);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::CITY_OF_STORMREACH);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::CITYSCAPE);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::COMPLETE_CHAMPION);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::COMPLETE_MAGE);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::COMPLETE_SCOUNDREL);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::DRAGON_MAGIC);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::DRAGONMARKED);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::DRAGONS_OF_EBERRON);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::DRAGONS_OF_FAERUN);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::DROW_OF_THE_UNDERDARK);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::EXPEDITION_TO_CASTLE_RAVENLOFT);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::EXPEDITION_TO_DEMONWEB_PITS);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::EXPEDITION_TO_UNDERMOUNTAIN);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::FAITHS_OF_EBERRON);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::FIENDISH_CODEX_I);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::FIENDISH_CODEX_II);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::FIVE_NATIONS);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::FORGE_OF_WAR);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::HEROES_OF_BATTLE);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::HEROES_OF_HORROR);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::LORDS_OF_MADNESS);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::MAGIC_OF_EBERRON);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::MONSTER_MANUAL_IV);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::MAGIC_OF_INCARNUM);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::PLAYERS_GUIDE_TO_EBERRON);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::PLAYERS_HANDBOOK);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::PLAYERS_HANDBOOK_II);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::POWER_OF_FAERUN);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::RACES_OF_EBERRON);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::RACES_OF_THE_DRAGON);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::SANDSTORM);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::SECRETS_OF_SARLONA);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::SECRETS_OF_XENDRIK);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::SPELL_COMPENDIUM);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::STORMWRACK);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::WEAPONS_OF_LEGACY);
-	QDatabaseInterface::RevisedBitset.set(SpellConstantsEnum::WEB35);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::ANAUROCH_EMPIRE_OF_SHADE);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::CHAMPIONS_OF_RUIN);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::CHAMPIONS_OF_VALOR);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::CITY_OF_SPLENDORS_WATERDEEP);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::CITY_OF_STORMREACH);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::CITYSCAPE);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::COMPLETE_CHAMPION);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::COMPLETE_MAGE);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::COMPLETE_SCOUNDREL);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::DRAGON_MAGIC);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::DRAGONMARKED);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::DRAGONS_OF_EBERRON);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::DRAGONS_OF_FAERUN);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::DROW_OF_THE_UNDERDARK);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::EXPEDITION_TO_CASTLE_RAVENLOFT);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::EXPEDITION_TO_DEMONWEB_PITS);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::EXPEDITION_TO_UNDERMOUNTAIN);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::FAITHS_OF_EBERRON);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::FIENDISH_CODEX_I);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::FIENDISH_CODEX_II);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::FIVE_NATIONS);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::FORGE_OF_WAR);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::HEROES_OF_BATTLE);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::HEROES_OF_HORROR);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::LORDS_OF_MADNESS);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::MAGIC_OF_EBERRON);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::MONSTER_MANUAL_IV);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::MAGIC_OF_INCARNUM);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::PLAYERS_GUIDE_TO_EBERRON);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::PLAYERS_HANDBOOK);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::PLAYERS_HANDBOOK_II);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::POWER_OF_FAERUN);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::RACES_OF_EBERRON);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::RACES_OF_THE_DRAGON);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::SANDSTORM);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::SECRETS_OF_SARLONA);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::SECRETS_OF_XENDRIK);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::SPELL_COMPENDIUM);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::STORMWRACK);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::WEAPONS_OF_LEGACY);
+	QDatabaseInterface::RevisedBitset.set(SpellEnum::WEB35);
 	
 	const auto button35e = new QPushButton("3.5e");
 	QDatabaseInterface::multibits.emplace_back(button35e, QDatabaseInterface::RevisedBitset);
@@ -926,22 +926,22 @@ void QDatabaseInterface<SpellConstantsEnum>::initialiseBars(const QFont& font, Q
 }
 
 template<>
-void QDatabaseInterface<PowerConstantsEnum>::initialiseBars(const QFont&, QGridLayout* layout, qint32 delta)
+void QDatabaseInterface<PowerEnum>::initialiseBars(const QFont&, QGridLayout* layout, qint32 delta)
 {
-	QDatabaseInterface::RevisedBitset.set(PowerConstantsEnum::COMPLETE_PSIONIC);
-	QDatabaseInterface::RevisedBitset.set(PowerConstantsEnum::DRAGON_MAGIC);
-	QDatabaseInterface::RevisedBitset.set(PowerConstantsEnum::EXPANDED_PSIONICS_HANDBOOK);
-	QDatabaseInterface::RevisedBitset.set(PowerConstantsEnum::FAITHS_OF_EBERRON);
-	QDatabaseInterface::RevisedBitset.set(PowerConstantsEnum::HYPERCONSCIOUS);
-	QDatabaseInterface::RevisedBitset.set(PowerConstantsEnum::MAGIC_OF_EBERRON);
-	QDatabaseInterface::RevisedBitset.set(PowerConstantsEnum::MAGIC_OF_INCARNUM);
-	QDatabaseInterface::RevisedBitset.set(PowerConstantsEnum::PLAYERS_GUIDE_TO_EBERRON);
-	QDatabaseInterface::RevisedBitset.set(PowerConstantsEnum::RACES_OF_THE_DRAGON);
-	QDatabaseInterface::RevisedBitset.set(PowerConstantsEnum::RACES_OF_THE_WILD);
-	QDatabaseInterface::RevisedBitset.set(PowerConstantsEnum::SECRETS_OF_SARLONA);
-	QDatabaseInterface::RevisedBitset.set(PowerConstantsEnum::STORMWRACK);
-	QDatabaseInterface::RevisedBitset.set(PowerConstantsEnum::WEAPONS_OF_LEGACY);
-	QDatabaseInterface::RevisedBitset.set(PowerConstantsEnum::WEB);
+	QDatabaseInterface::RevisedBitset.set(PowerEnum::COMPLETE_PSIONIC);
+	QDatabaseInterface::RevisedBitset.set(PowerEnum::DRAGON_MAGIC);
+	QDatabaseInterface::RevisedBitset.set(PowerEnum::EXPANDED_PSIONICS_HANDBOOK);
+	QDatabaseInterface::RevisedBitset.set(PowerEnum::FAITHS_OF_EBERRON);
+	QDatabaseInterface::RevisedBitset.set(PowerEnum::HYPERCONSCIOUS);
+	QDatabaseInterface::RevisedBitset.set(PowerEnum::MAGIC_OF_EBERRON);
+	QDatabaseInterface::RevisedBitset.set(PowerEnum::MAGIC_OF_INCARNUM);
+	QDatabaseInterface::RevisedBitset.set(PowerEnum::PLAYERS_GUIDE_TO_EBERRON);
+	QDatabaseInterface::RevisedBitset.set(PowerEnum::RACES_OF_THE_DRAGON);
+	QDatabaseInterface::RevisedBitset.set(PowerEnum::RACES_OF_THE_WILD);
+	QDatabaseInterface::RevisedBitset.set(PowerEnum::SECRETS_OF_SARLONA);
+	QDatabaseInterface::RevisedBitset.set(PowerEnum::STORMWRACK);
+	QDatabaseInterface::RevisedBitset.set(PowerEnum::WEAPONS_OF_LEGACY);
+	QDatabaseInterface::RevisedBitset.set(PowerEnum::WEB);
 	
 	layout->addWidget(QDatabaseInterfaceIntermediary::nameLineEdit, delta + 8, 0, 1, 5);
 	layout->addWidget(QDatabaseInterfaceIntermediary::loreLineEdit, delta + 8, 5, 1, 5);
