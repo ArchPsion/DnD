@@ -15,9 +15,8 @@ class QHomeInterface : public QMainWindow
 	
 	private:
 	
-		QWidget* const					mainWidget = new QWidget();
-		QDatabaseWindow<PowerEnum>* const		powerDatabaseWindow = new QDatabaseWindow<PowerEnum>(mainWidget, "power");
-		QDatabaseWindow<SpellEnum>* const		spellDatabaseWindow = new QDatabaseWindow<SpellEnum>(mainWidget, "spell");
+		QDatabaseWindow<PowerEnum>* const		powerDatabaseWindow = new QDatabaseWindow<PowerEnum>(this, "power");
+		QDatabaseWindow<SpellEnum>* const		spellDatabaseWindow = new QDatabaseWindow<SpellEnum>(this, "spell");
 	
 	private slots:
 	
@@ -31,8 +30,10 @@ class QHomeInterface : public QMainWindow
 
 QHomeInterface::QHomeInterface(void) : QMainWindow()
 {
+	const auto mainWidget = new QWidget();
+	
 	QMainWindow::setWindowTitle("Dungeons & Dragons 3.5e Libraries");
-	QMainWindow::setCentralWidget(QHomeInterface::mainWidget);
+	QMainWindow::setCentralWidget(mainWidget);
 	QMainWindow::setMinimumWidth(500);
 	
 	const auto powerDatabaseButton = new QPushButton("Power Library");
@@ -42,7 +43,7 @@ QHomeInterface::QHomeInterface(void) : QMainWindow()
 	
 	layout->addWidget(powerDatabaseButton);
 	layout->addWidget(spellDatabaseButton);
-	QHomeInterface::mainWidget->setLayout(layout);
+	mainWidget->setLayout(layout);
 	
 	QObject::connect(powerDatabaseButton, SIGNAL(clicked(void)), this, SLOT(showPowerDatabase(void)));
 	QObject::connect(spellDatabaseButton, SIGNAL(clicked(void)), this, SLOT(showSpellDatabase(void)));
