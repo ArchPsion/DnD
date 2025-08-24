@@ -617,15 +617,15 @@
 			null
 		],
 		[
-			"/home/lol/Documents/Coding/C++/DnD/QDatabaseInterface.hpp",
+			"/home/lol/Documents/Coding/C++/DnD/QAbstractDatabaseWindow.hpp",
 			"MU",
-			"EWIEGA46WW/moc_QDatabaseInterface.cpp",
+			"EWIEGA46WW/moc_QAbstractDatabaseWindow.cpp",
 			null
 		],
 		[
-			"/home/lol/Documents/Coding/C++/DnD/QDatabaseInterfaceIntermediary.hpp",
+			"/home/lol/Documents/Coding/C++/DnD/QDatabaseWindow.hpp",
 			"MU",
-			"EWIEGA46WW/moc_QDatabaseInterfaceIntermediary.cpp",
+			"EWIEGA46WW/moc_QDatabaseWindow.cpp",
 			null
 		],
 		[
@@ -695,11 +695,7 @@
 	"SOURCES" : 
 	[
 		[ "/home/lol/Documents/Coding/C++/DnD/Main.cpp", "MU", null ],
-		[
-			"/home/lol/Documents/Coding/C++/DnD/QDatabaseInterface.cpp",
-			"MU",
-			null
-		]
+		[ "/home/lol/Documents/Coding/C++/DnD/QDatabaseWindow.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

@@ -7,7 +7,7 @@
 
 // Custom Libraries
 #include "Constants.hpp"
-#include "QDatabaseInterface.hpp"
+#include "QDatabaseWindow.hpp"
 
 class QHomeInterface : public QMainWindow
 {
@@ -16,8 +16,8 @@ class QHomeInterface : public QMainWindow
 	private:
 	
 		QWidget* const					mainWidget = new QWidget();
-		QDatabaseInterface<PowerEnum>* const		powerDatabaseWindow = new QDatabaseInterface<PowerEnum>(mainWidget, "power");
-		QDatabaseInterface<SpellEnum>* const		spellDatabaseWindow = new QDatabaseInterface<SpellEnum>(mainWidget, "spell");
+		QDatabaseWindow<PowerEnum>* const		powerDatabaseWindow = new QDatabaseWindow<PowerEnum>(mainWidget, "power");
+		QDatabaseWindow<SpellEnum>* const		spellDatabaseWindow = new QDatabaseWindow<SpellEnum>(mainWidget, "spell");
 	
 	private slots:
 	

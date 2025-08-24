@@ -65,9 +65,9 @@ build CMakeFiles/foo.dir/Main.cpp.o: CXX_COMPILER__foo_unscanned_Debug /home/lol
   OBJECT_DIR = CMakeFiles/foo.dir
   OBJECT_FILE_DIR = CMakeFiles/foo.dir
 
-build CMakeFiles/foo.dir/QDatabaseInterface.cpp.o: CXX_COMPILER__foo_unscanned_Debug /home/lol/Documents/Coding/C++/DnD/QDatabaseInterface.cpp || cmake_object_order_depends_target_foo
+build CMakeFiles/foo.dir/QDatabaseWindow.cpp.o: CXX_COMPILER__foo_unscanned_Debug /home/lol/Documents/Coding/C++/DnD/QDatabaseWindow.cpp || cmake_object_order_depends_target_foo
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/foo.dir/QDatabaseInterface.cpp.o.d
+  DEP_FILE = CMakeFiles/foo.dir/QDatabaseWindow.cpp.o.d
   FLAGS = -O2 -Wall -Wextra -Warith-conversion -pedantic -Wpedantic -g -ggdb -g -std=gnu++23 -fdiagnostics-color=always -fPIC
   INCLUDES = -I/home/lol/Documents/Coding/C++/DnD/build/Desktop_Qt_6_9_1-Debug/foo_autogen/include -isystem /home/lol/Qt/6.9.1/gcc_64/include/QtCore -isystem /home/lol/Qt/6.9.1/gcc_64/include -isystem /home/lol/Qt/6.9.1/gcc_64/mkspecs/linux-g++ -isystem /home/lol/Qt/6.9.1/gcc_64/include/QtWidgets -isystem /home/lol/Qt/6.9.1/gcc_64/include/QtGui
   OBJECT_DIR = CMakeFiles/foo.dir
@@ -81,7 +81,7 @@ build CMakeFiles/foo.dir/QDatabaseInterface.cpp.o: CXX_COMPILER__foo_unscanned_D
 #############################################
 # Link the executable foo
 
-build foo: CXX_EXECUTABLE_LINKER__foo_Debug CMakeFiles/foo.dir/foo_autogen/mocs_compilation.cpp.o CMakeFiles/foo.dir/Main.cpp.o CMakeFiles/foo.dir/QDatabaseInterface.cpp.o | /home/lol/Qt/6.9.1/gcc_64/lib/libQt6Widgets.so.6.9.1 /home/lol/Qt/6.9.1/gcc_64/lib/libQt6Gui.so.6.9.1 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so /home/lol/Qt/6.9.1/gcc_64/lib/libQt6Core.so.6.9.1 || foo_autogen foo_autogen_timestamp_deps
+build foo: CXX_EXECUTABLE_LINKER__foo_Debug CMakeFiles/foo.dir/foo_autogen/mocs_compilation.cpp.o CMakeFiles/foo.dir/Main.cpp.o CMakeFiles/foo.dir/QDatabaseWindow.cpp.o | /home/lol/Qt/6.9.1/gcc_64/lib/libQt6Widgets.so.6.9.1 /home/lol/Qt/6.9.1/gcc_64/lib/libQt6Gui.so.6.9.1 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so /home/lol/Qt/6.9.1/gcc_64/lib/libQt6Core.so.6.9.1 || foo_autogen foo_autogen_timestamp_deps
   FLAGS = -O2 -Wall -Wextra -Warith-conversion -pedantic -Wpedantic -g -ggdb -g
   LINK_LIBRARIES = -Wl,-rpath,/home/lol/Qt/6.9.1/gcc_64/lib  /home/lol/Qt/6.9.1/gcc_64/lib/libQt6Widgets.so.6.9.1  /home/lol/Qt/6.9.1/gcc_64/lib/libQt6Gui.so.6.9.1  /usr/lib/x86_64-linux-gnu/libGLX.so  /usr/lib/x86_64-linux-gnu/libOpenGL.so  /home/lol/Qt/6.9.1/gcc_64/lib/libQt6Core.so.6.9.1  -Wl,-rpath-link,/home/lol/Qt/6.9.1/gcc_64/lib
   OBJECT_DIR = CMakeFiles/foo.dir

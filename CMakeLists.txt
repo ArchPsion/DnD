@@ -16,12 +16,12 @@ qt_add_executable(	foo
 			
 			Constants.hpp 
 			HexBitset.hpp 
-			QDatabaseInterface.hpp 
-			QDatabaseInterfaceIntermediary.hpp 
+			QDatabaseWindow.hpp 
+			QAbstractDatabaseWindow.hpp 
 			QHomeInterface.hpp 
 			
 			Main.cpp
-			QDatabaseInterface.cpp
+			QDatabaseWindow.cpp
 )
 
 target_link_libraries(foo PRIVATE Qt6::Widgets)

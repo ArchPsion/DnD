@@ -2,8 +2,8 @@
   /home/lol/Documents/Coding/C++/DnD/build/Desktop_Qt_6_9_1-Debug/foo_autogen/moc_predefs.h \
   /home/lol/Documents/Coding/C++/DnD/Constants.hpp \
   /home/lol/Documents/Coding/C++/DnD/HexBitset.hpp \
-  /home/lol/Documents/Coding/C++/DnD/QDatabaseInterface.hpp \
-  /home/lol/Documents/Coding/C++/DnD/QDatabaseInterfaceIntermediary.hpp \
+  /home/lol/Documents/Coding/C++/DnD/QAbstractDatabaseWindow.hpp \
+  /home/lol/Documents/Coding/C++/DnD/QDatabaseWindow.hpp \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/q17memory.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/q20functional.h \
   /home/lol/Qt/6.9.1/gcc_64/include/QtCore/q20iterator.h \

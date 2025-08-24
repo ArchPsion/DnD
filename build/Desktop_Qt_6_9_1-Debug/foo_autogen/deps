@@ -3,9 +3,9 @@ foo_autogen/timestamp: \
 	/home/lol/Documents/Coding/C++/DnD/Constants.hpp \
 	/home/lol/Documents/Coding/C++/DnD/HexBitset.hpp \
 	/home/lol/Documents/Coding/C++/DnD/Main.cpp \
-	/home/lol/Documents/Coding/C++/DnD/QDatabaseInterface.cpp \
-	/home/lol/Documents/Coding/C++/DnD/QDatabaseInterface.hpp \
-	/home/lol/Documents/Coding/C++/DnD/QDatabaseInterfaceIntermediary.hpp \
+	/home/lol/Documents/Coding/C++/DnD/QAbstractDatabaseWindow.hpp \
+	/home/lol/Documents/Coding/C++/DnD/QDatabaseWindow.cpp \
+	/home/lol/Documents/Coding/C++/DnD/QDatabaseWindow.hpp \
 	/home/lol/Documents/Coding/C++/DnD/QHomeInterface.hpp \
 	/home/lol/Documents/Coding/C++/DnD/build/Desktop_Qt_6_9_1-Debug/.qtc/package-manager/auto-setup.cmake \
 	/home/lol/Documents/Coding/C++/DnD/build/Desktop_Qt_6_9_1-Debug/.qtc/package-manager/maintenance_tool_provider.cmake \

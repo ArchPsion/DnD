@@ -5,15 +5,15 @@
 #include "QHomeInterface.hpp"
 
 // Global Variables
-template<> const QString QDatabaseInterface<PowerEnum>::DomainOrMantleString("Mantles");
-template<> const QString QDatabaseInterface<PowerEnum>::ComponentOrDisplayString("Display");
-template<> const QString QDatabaseInterface<PowerEnum>::CastingOrManifestingString("Manifesting");
-template<> const QString QDatabaseInterface<PowerEnum>::ResistanceString("Power");
+template<> const QString QDatabaseWindow<PowerEnum>::DomainOrMantleString("Mantles");
+template<> const QString QDatabaseWindow<PowerEnum>::ComponentOrDisplayString("Display");
+template<> const QString QDatabaseWindow<PowerEnum>::CastingOrManifestingString("Manifesting");
+template<> const QString QDatabaseWindow<PowerEnum>::ResistanceString("Power");
 
-template<> const QString QDatabaseInterface<SpellEnum>::DomainOrMantleString("Domains");
-template<> const QString QDatabaseInterface<SpellEnum>::ComponentOrDisplayString("Components");
-template<> const QString QDatabaseInterface<SpellEnum>::CastingOrManifestingString("Casting");
-template<> const QString QDatabaseInterface<SpellEnum>::ResistanceString("Spell");
+template<> const QString QDatabaseWindow<SpellEnum>::DomainOrMantleString("Domains");
+template<> const QString QDatabaseWindow<SpellEnum>::ComponentOrDisplayString("Components");
+template<> const QString QDatabaseWindow<SpellEnum>::CastingOrManifestingString("Casting");
+template<> const QString QDatabaseWindow<SpellEnum>::ResistanceString("Spell");
 
 int main(int argc, char *argv[])
 {	

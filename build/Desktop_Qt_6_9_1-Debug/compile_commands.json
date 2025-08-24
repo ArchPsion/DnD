@@ -13,8 +13,8 @@
 },
 {
   "directory": "/home/lol/Documents/Coding/C++/DnD/build/Desktop_Qt_6_9_1-Debug",
-  "command": "/bin/g++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/lol/Documents/Coding/C++/DnD/build/Desktop_Qt_6_9_1-Debug/foo_autogen/include -isystem /home/lol/Qt/6.9.1/gcc_64/include/QtCore -isystem /home/lol/Qt/6.9.1/gcc_64/include -isystem /home/lol/Qt/6.9.1/gcc_64/mkspecs/linux-g++ -isystem /home/lol/Qt/6.9.1/gcc_64/include/QtWidgets -isystem /home/lol/Qt/6.9.1/gcc_64/include/QtGui -O2 -Wall -Wextra -Warith-conversion -pedantic -Wpedantic -g -ggdb -g -std=gnu++23 -fdiagnostics-color=always -fPIC -o CMakeFiles/foo.dir/QDatabaseInterface.cpp.o -c /home/lol/Documents/Coding/C++/DnD/QDatabaseInterface.cpp",
-  "file": "/home/lol/Documents/Coding/C++/DnD/QDatabaseInterface.cpp",
-  "output": "CMakeFiles/foo.dir/QDatabaseInterface.cpp.o"
+  "command": "/bin/g++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/lol/Documents/Coding/C++/DnD/build/Desktop_Qt_6_9_1-Debug/foo_autogen/include -isystem /home/lol/Qt/6.9.1/gcc_64/include/QtCore -isystem /home/lol/Qt/6.9.1/gcc_64/include -isystem /home/lol/Qt/6.9.1/gcc_64/mkspecs/linux-g++ -isystem /home/lol/Qt/6.9.1/gcc_64/include/QtWidgets -isystem /home/lol/Qt/6.9.1/gcc_64/include/QtGui -O2 -Wall -Wextra -Warith-conversion -pedantic -Wpedantic -g -ggdb -g -std=gnu++23 -fdiagnostics-color=always -fPIC -o CMakeFiles/foo.dir/QDatabaseWindow.cpp.o -c /home/lol/Documents/Coding/C++/DnD/QDatabaseWindow.cpp",
+  "file": "/home/lol/Documents/Coding/C++/DnD/QDatabaseWindow.cpp",
+  "output": "CMakeFiles/foo.dir/QDatabaseWindow.cpp.o"
 }
 ]
