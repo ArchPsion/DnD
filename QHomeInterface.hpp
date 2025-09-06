@@ -1,5 +1,5 @@
-#ifndef __HOME_INTERFACE_HPP__
-#define __HOME_INTERFACE_HPP__
+#ifndef __Q_HOME_INTERFACE_HPP__
+#define __Q_HOME_INTERFACE_HPP__
 
 // Qt Libraries
 #include <QGridLayout>
