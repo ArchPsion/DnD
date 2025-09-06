@@ -1,9 +1,6 @@
 #ifndef __HEX_BITSET_PACK_HPP__
 #define __HEX_BITSET_PACK_HPP__
 
-// Standard Libraries
-#include <vector>
-
 // Custom Libraries
 #include "HexBitset.hpp"
 #include "OtherClasses.hpp"

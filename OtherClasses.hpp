@@ -1,6 +1,9 @@
 #ifndef __OTHER_CLASSES_HPP__
 #define __OTHER_CLASSES_HPP__
 
+// Standard Libraries
+#include <vector>
+
 // Qt Libraries
 #include <QPushButton>
 
