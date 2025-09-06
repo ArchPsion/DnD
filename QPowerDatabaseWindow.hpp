@@ -78,7 +78,6 @@ QPowerDatabaseWindow::QPowerDatabaseWindow(QWidget* foo) :
 	s1->setKeys({ QKeySequence(Qt::Key_Return), QKeySequence(Qt::Key_Enter) });
 	
 	QObject::connect(s1, SIGNAL(activated(void)), this, SLOT(search(void)));
-	QObject::connect(QAbstractDatabaseWindow::resultList, SIGNAL(currentItemChanged(int)), this, SLOT(sear(void)));
 }
 
 QColor QPowerDatabaseWindow::Foreground(const HexBitset<Number>& b)
